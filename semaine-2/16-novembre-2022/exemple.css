@@ -1,0 +1,34 @@
+* body {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background: blue;
+  height: 10vh;
+}
+
+footer {
+  background: red;
+  height: 10vh;
+}
+
+nav {
+  background: green;
+  height: 5vh;
+}
+
+main {
+  height: 75vh;
+  width: 70vw;
+}
+
+aside {
+  background: aquamarine;
+  height: 75vh;
+  width: 30vw;
+}
+
+.main {
+  display: flex;
+}
