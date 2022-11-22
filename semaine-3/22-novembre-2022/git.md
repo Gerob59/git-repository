@@ -79,7 +79,15 @@ git checkout -b <nom-branche> (cree et deplace sur la branche)
 git checkout master
 git branch -d <nom-branche> (supprime une branche)
 
-git merge / git rebase
+git merge <nom-branche> (ramene les modifications de la branche vers la main)
+(ramène aussi tous les commits sur la branche main)
+head (branch temporaire) -> toutes les modif du projet jusqu'au prochain commit
+
+**/!\ ATTENTION /!\\**
+**git reset --hard <hash> (reset au commit hash et supprime tous les commits après)**
+**/!\ ATTENTION /!\\**
+
+git rebase
 
 git tag
 
