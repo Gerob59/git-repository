@@ -106,18 +106,50 @@ git tag 0.5.0 (le dernier commit recoit le tag)
 git tag -d 0.5.0 (delete le tag 0.5.0)
 git tag 0.5.0 <hash>
 
+### reflog
+
+permet de voir les commits suppr
+git reset --hard <id> (fait revenir le commit suppr dans le projet)
+
+### stash
+
+git stash (met en mémoire les modif, mais pas en commit)
+git stash list (voir toutes les stash)
+git stash pop (recupère le dernier stash)
+git stash drop <id> (ex : git stash apply 0)
+git stash apply <id>
+
 #### modification
 
 git checkout tags/0.5.0 (travaille sur un head temporaire. si le code n'est pas enregistré, il est perdu)
 git checkout tags/0.5.0 -b 0.5.0 (travaille sur une nouvelle branche, modification enregistré)
 
-### gitflow
+## gitflow
 
 [Alt text](./workflow.png)
 [Alt text](./workflow2.png)
-TDD - Test Driven Developpement
+TDD : Test-Driven Development
 
-### conflit
+### flow init
+
+git flow init (git init mais avec les commandes git-flow)
+[Alt text](./git-flow-init.png)
+
+### flow feature
+
+git flow feature start authentificate (creer la branche feature/authentificate et se déplace dedans)
+git flow feature finish (merge la branch et le detruit)
+
+### flow release
+
+git flow release start 1.0.0 (creer une branche release)
+git flow release finish (merge la branche sur master et develop puis detruit la branche)
+
+## alias
+
+git config --global alias.c "commit -m" (git commit -m "text" -> git c "text")
+git config --global alias.a add
+git config --global alias.b "checkout -b"
 
 git rebase
 
@@ -143,5 +175,3 @@ i (passer en insertion)
 "Echap" (quitter le mode insertion)
 :q (quitter sans sauvegarder)
 :wq (quitter en sauvegardant)
-
-# Github (plateforme qui utilise Git)
