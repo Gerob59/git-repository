@@ -1,15 +1,13 @@
 # Git (outil de versionning)
 
-## Versionning
+https://learngitbranching.js.org/?locale=fr_FR
 
-historique
-
-## travail en equipe
+## Travail en equipe
 
 travail en parallele
 décentralisé (plusieurs personnes peuvent acceder à une même partie du logiciel)
 
-## configuration
+## Configuration
 
 https://git-scm.com/download/win
 
@@ -21,9 +19,9 @@ git config --global core.editor "code --wait"
 git init (dans le dossier voulu)
 |->.git (configuration de git)
 
-## commande git
+## Commande git
 
-### life cycle
+### Life cycle
 
 _untracked_ (creation du fichier)
 _staged_ (pret a etre deposé sur github)
@@ -36,9 +34,8 @@ Repository (mkdir: dossier)
 |-> git status (voir toutes les modifications apporté)
 |-> git add <fichier>
 |-> git commit -m "titre" -m "description"
-|->
 
-### conventional commit
+### Conventional commit
 
 https://www.conventionalcommits.org/en/v1.0.0/
 
@@ -46,7 +43,7 @@ https://www.conventionalcommits.org/en/v1.0.0/
 [optional body]
 [optional footer(s)]
 
-### modifier le nom du dernier commit
+### Modifier le nom du dernier commit
 
 git commit --amend
 git commit --amend -m "mon nouveau titre"
@@ -59,7 +56,7 @@ git commit --amend <fichier>
 ### mauvaise pratique
 
 git add . (commit tous les fichiers) /!\ à ne pas faire
-git rm --cached <fichier> (ne suis plus le fichier / .gitignore)
+pour palier a ça : git rm --cached <fichier> (ne suis plus le fichier / .gitignore)
 
 ### log
 
@@ -88,11 +85,41 @@ head (branch temporaire) -> toutes les modif du projet jusqu'au prochain commit
 **/!\ ATTENTION /!\\**
 git reset <hash> (retourne au commit hash et _untracked_ tous les modifs des commits suivants)
 
+### tag
+
+Un tag est relié a un commit
+Il sert de porte d'entré pour recupéré le commit facilement sans utiliser de reset
+
+#### versions
+
+A.B.C
+A = version majeur
+B = version mineur
+c = patch
+
+#### creation
+
+git tag (permet de voir tous les tag)
+
+git tag 0.5.0 (le dernier commit recoit le tag)
+
+git tag -d 0.5.0 (delete le tag 0.5.0)
+git tag 0.5.0 <hash>
+
+#### modification
+
+git checkout tags/0.5.0 (travaille sur un head temporaire. si le code n'est pas enregistré, il est perdu)
+git checkout tags/0.5.0 -b 0.5.0 (travaille sur une nouvelle branche, modification enregistré)
+
+### gitflow
+
+[Alt text](./workflow.png)
+[Alt text](./workflow2.png)
+TDD - Test Driven Developpement
+
+### conflit
+
 git rebase
-
-git tag
-
-git conflit
 
 ## commande terminal
 
