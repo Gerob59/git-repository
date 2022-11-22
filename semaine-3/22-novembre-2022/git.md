@@ -30,13 +30,21 @@ _staged_ (pret a etre deposé sur github)
 _unmodified_ (fichier commité)
 _modified_ (fichier pas pret a etre commit)
 
-Repository (dossier)
+Repository (mkdir: dossier)
 |
-|-> touch filename
+|-> touch <filename> (créer un fichier)
 |-> git status (voir toutes les modifications apporté)
 |-> git add <fichier>
 |-> git commit -m "titre" -m "description"
 |->
+
+### conventional commit
+
+https://www.conventionalcommits.org/en/v1.0.0/
+
+<type>[optional scope]: <description>
+[optional body]
+[optional footer(s)]
 
 ### modifier le nom du dernier commit
 
@@ -62,9 +70,14 @@ git diff <hash1>^ (diff du commit avec son parent)
 git diff <hash1>^^ (diff du commit avec son grand-parent)
 git diff <hash1>~3 (diff du commit avec son arriere grand-parent)
 
-### autre
+### branch
 
-git branch
+git branch <nom-branche> (cree une branche)
+git checkout <nom-branche> (se deplace sur la branche)
+git checkout -b <nom-branche> (cree et deplace sur la branche)
+
+git checkout master
+git branch -d <nom-branche> (supprime une branche)
 
 git merge / git rebase
 
