@@ -84,8 +84,9 @@ git merge <nom-branche> (ramene les modifications de la branche vers la main)
 head (branch temporaire) -> toutes les modif du projet jusqu'au prochain commit
 
 **/!\ ATTENTION /!\\**
-**git reset --hard <hash> (reset au commit hash et supprime tous les commits après)**
+**git reset --hard <hash> (reset au commit hash et supprime tous les commits suivants)**
 **/!\ ATTENTION /!\\**
+git reset <hash> (retourne au commit hash et _untracked_ tous les modifs des commits suivants)
 
 git rebase
 
