@@ -115,6 +115,9 @@ git reset --hard <id> (fait revenir le commit suppr dans le projet)
 
 git stash (met en mémoire les modif, mais pas en commit)
 git stash list (voir toutes les stash)
+
+#### acceder
+
 git stash pop (recupère le dernier stash)
 git stash drop <id> (ex : git stash apply 0)
 git stash apply <id>
@@ -123,6 +126,20 @@ git stash apply <id>
 
 git checkout tags/0.5.0 (travaille sur un head temporaire. si le code n'est pas enregistré, il est perdu)
 git checkout tags/0.5.0 -b 0.5.0 (travaille sur une nouvelle branche, modification enregistré)
+
+### revert
+
+git revert <hash> (soft reset qui s'arrete au premier conflit)
+git revert --continue <hash> (ne s'arrete avec les conflits)
+
+### .gitignore
+
+dossier a la racine pour ignorer des fichiers de config
+git rm --cached <fichier> (pour enlevé un fichier dejà commit)
+
+### rebase
+
+rebase garde que le dernier commit et ne garde pas l'historique de commit de la branche (contrairement au merge)
 
 ## gitflow
 
