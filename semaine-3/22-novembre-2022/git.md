@@ -75,6 +75,7 @@ git checkout -b <nom-branche> (cree et deplace sur la branche)
 
 git checkout master
 git branch -d <nom-branche> (supprime une branche)
+git branch -M "nouveau nom de la branche"
 
 git merge <nom-branche> (ramene les modifications de la branche vers la main)
 (ramène aussi tous les commits sur la branche main)
@@ -140,6 +141,15 @@ git rm --cached <fichier> (pour enlevé un fichier dejà commit)
 ### rebase
 
 rebase garde que le dernier commit et ne garde pas l'historique de commit de la branche (contrairement au merge)
+
+### remote
+
+git remote add origin <htpps:>
+git remote get-url origin
+git remote set-url origin toto
+git remote (renvoi le nom des remotes presents)
+git remote remove origin
+git push -u origin main
 
 ## gitflow
 
