@@ -67,19 +67,32 @@ git diff <hash1>^ (diff du commit avec son parent)
 git diff <hash1>^^ (diff du commit avec son grand-parent)
 git diff <hash1>~3 (diff du commit avec son arriere grand-parent)
 
-### branch
+### branch/checkout/merge
+
+#### local branch
 
 git branch <nom-branche> (cree une branche)
 git checkout <nom-branche> (se deplace sur la branche)
 git checkout -b <nom-branche> (cree et deplace sur la branche)
 
+#### checkout
+
 git checkout master
 git branch -d <nom-branche> (supprime une branche)
 git branch -M "nouveau nom de la branche"
 
+#### distant branch
+
+git branch -a (permet de voir toutes les branches)
+git checkout -a <branch>
+
+#### merge
+
 git merge <nom-branche> (ramene les modifications de la branche vers la main)
 (ramène aussi tous les commits sur la branche main)
 head (branch temporaire) -> toutes les modif du projet jusqu'au prochain commit
+
+### reset
 
 **/!\ ATTENTION /!\\**
 **git reset --hard <hash> (reset au commit hash et supprime tous les commits suivants)**
@@ -119,8 +132,8 @@ git stash list (voir toutes les stash)
 
 #### acceder
 
-git stash pop (recupère le dernier stash)
-git stash drop <id> (ex : git stash apply 0)
+git stash pop (recupère le premier stash et le supprime)
+git stash drop <id>
 git stash apply <id>
 
 #### modification
