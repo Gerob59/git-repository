@@ -77,8 +77,57 @@ function plusGrandTab(...nombres:number[]) :number {
 }
 console.log(plusGrandTab(12,5,3,14,14));
 
-
 // Exerice 6
+
+/**
+ * 
+ * @param prenom prenom de l'élève
+ * @param notes utilise la fonction 'moyenne(notes:number[])' pour avoir la moyenne le l'élève
+ * @returns prenom + moyenne + appreciation
+ */
+function lazy(prenom:string, ...notes:number[]) :string {
+    const moy:number = moyenne(notes);
+    return `${prenom} : ${moy}, ${appreciation(moy)}`;
+}
+
+/**
+ * Fait la moyenne de toutes les notes
+ * @param notes 
+ * @returns moyenne
+ */
+function moyenne(notes:number[]) :number {
+    let moyenne:number = notes [0];
+    for (let index = 1; index < notes.length; index++) {
+        moyenne += notes[index];
+    }
+    return moyenne/notes.length;
+}
+
+/**
+ * Donne l'appréciation par rapport a la moyenne de l'élève
+ * @param moyenne 
+ * @returns appreciation
+ */
+function appreciation(moyenne:number) :string {
+    let resultat:string = "";
+     if (moyenne > 20 || moyenne < 0) {
+        resultat = "Note non valide";
+    } else if (moyenne >= 19) {
+        resultat = "Très bien"
+    } else if (moyenne >= 15) {
+        resultat = "Bien"
+    } else if (moyenne >= 11) {
+        resultat = "Passable"
+    } else if (moyenne >= 5) {
+        resultat = "Insuffisant"
+    } else {
+        resultat = "Catastrophique"
+    }
+    return resultat;
+}
+
+console.log(lazy("Corine de la Compta",12,15,10));
+
 
 // Exerice 7
 
