@@ -128,7 +128,29 @@ function appreciation(moyenne:number) :string {
 
 console.log(lazy("Corine de la Compta",12,15,10));
 
-
 // Exerice 7
+
+/**
+ * permet le calcul entre 2 nombre avec uniquement les operateurs : '+' '-' '*' '/'
+ * @param nombre1 
+ * @param nombre2 
+ * @param operateur 
+ * @returns calcl nombre 1 et nombre 2 selon operator 
+ */
+function operation(nombre1:number, nombre2:number, operateur:string) :number {
+    let result:number = 0;
+    if (operateur === "+") {
+        result = nombre1 + nombre2;
+    } else if (operateur === "-") {
+        result = nombre1 - nombre2;
+    } else if ( operateur === "*" ) {
+        result = nombre1 * nombre2;
+    } else if (operateur === "/") {
+        result = nombre1 / nombre2;
+    } else {
+        result = 0;
+    }
+    return result;
+}
 
 // Exerice 8
