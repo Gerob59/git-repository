@@ -1,9 +1,10 @@
 // Exerice 1
-function bonjour(prenom:string) :void {
-    console.log(`Bonjour ${prenom} !`);
+function bonjour(prenom:string) :String {
+    return `Bonjour ${prenom} !`;
 }
 
-bonjour("Michel")
+console.log(bonjour("Michel"));
+
 // Exerice 2
 function calcul(nombre1:number,nombre2:number) :Number {
     return nombre1+nombre2;
