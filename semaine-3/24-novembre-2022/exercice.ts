@@ -1,4 +1,8 @@
 // Exerice 1
+
+/**
+ *  Dit bonjour a 'prenom'
+ */
 function bonjour(prenom:string) :String {
     return `Bonjour ${prenom} !`;
 }
@@ -6,6 +10,13 @@ function bonjour(prenom:string) :String {
 console.log(bonjour("Michel"));
 
 // Exerice 2
+
+/**
+ * addition entre 2 nombres
+ * @param nombre1 
+ * @param nombre2 
+ * @return nombre1 + nombre2
+ */
 function calcul(nombre1:number,nombre2:number) :Number {
     return nombre1+nombre2;
 }
