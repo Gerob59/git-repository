@@ -157,7 +157,17 @@ console.log(operation(12,2,'/'));
 
 // Exerice 8
 
-
+function pyramide(taille:number):string {
+    let resultat:string = "";
+    for (let indexLigne = 0; indexLigne < taille; indexLigne++) {
+        for (let indexColone = 0; indexColone <= indexLigne; indexColone++) {
+            resultat += "*";
+        }
+        resultat += "\n";
+    }
+    return resultat;
+}
+console.log(pyramide(5));
 
 // Exercice 9
 
