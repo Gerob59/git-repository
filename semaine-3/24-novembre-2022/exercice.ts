@@ -3,7 +3,7 @@
 /**
  *  Fonction qui dit bonjour à 'prenom'
  */
-function bonjour(prenom:string) :String {
+function bonjour(prenom:string) :string {
     return `Bonjour ${prenom} !`;
 }
 
@@ -17,7 +17,7 @@ console.log(bonjour("Michel"));
  * @param nombre2 
  * @returns nombre1 + nombre2
  */
-function calcul(nombre1:number,nombre2:number) :Number {
+function calcul(nombre1:number,nombre2:number) :number {
     return nombre1+nombre2;
 }
 console.log(calcul(3,5));
@@ -25,12 +25,12 @@ console.log(calcul(3,5));
 // Exerice 3
 
 /**
- * Fonction qui annonce le gain ou la perte de €
+ * Fonction qui annonce le gain ou la perte en €
  * @param coutFabrication 
  * @param prixVente 
  * @returns difference entre coutFabrication et prixVente
  */
-function gain(coutFabrication:number,prixVente:number) :String {
+function gain(coutFabrication:number,prixVente:number) :string {
     if (coutFabrication >= prixVente) {
         return `Perte de ${coutFabrication - prixVente}€`
     } else {
@@ -48,7 +48,7 @@ console.log(gain(15,15));
  * @param nombre3 
  * @returns Le plus grand
  */
-function plusGrand(nombre1:number, nombre2:number, nombre3:number) :Number {
+function plusGrand(nombre1:number, nombre2:number, nombre3:number) :number {
     if (nombre1 >= nombre2 && nombre1 >= nombre3) {
         return nombre1;
     } else if (nombre2 >= nombre3) {
@@ -60,8 +60,20 @@ function plusGrand(nombre1:number, nombre2:number, nombre3:number) :Number {
 
 console.log(plusGrand(2,4,3));
 
-
 // Exerice 5
+
+function plusGrandTab(...nombres:number[]) :number {
+    let plusGrand:number = nombres[0];
+    for (let index = 1; index < nombres.length; index++) {
+        if (nombres[index] > plusGrand) {
+            plusGrand = nombres[index];
+        }
+    }
+    return plusGrand;
+}
+const tab:number[] = [12,5,3,14,14];
+// console.log(plusGrandTab(tab));
+
 
 // Exerice 6
 
