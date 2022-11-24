@@ -57,11 +57,15 @@ function plusGrand(nombre1:number, nombre2:number, nombre3:number) :number {
         return nombre3;
     }
 }
-
 console.log(plusGrand(2,4,3));
 
 // Exerice 5
 
+/**
+ * la fonction recoit une liste de nombre
+ * @param nombres 
+ * @returns le plus grand
+ */
 function plusGrandTab(...nombres:number[]) :number {
     let plusGrand:number = nombres[0];
     for (let index = 1; index < nombres.length; index++) {
@@ -71,8 +75,7 @@ function plusGrandTab(...nombres:number[]) :number {
     }
     return plusGrand;
 }
-const tab:number[] = [12,5,3,14,14];
-// console.log(plusGrandTab(tab));
+console.log(plusGrandTab(12,5,3,14,14));
 
 
 // Exerice 6
