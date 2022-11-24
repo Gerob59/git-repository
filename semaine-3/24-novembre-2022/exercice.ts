@@ -135,7 +135,7 @@ console.log(lazy("Corine de la Compta",12,15,10));
  * @param nombre1 
  * @param nombre2 
  * @param operateur 
- * @returns calcl nombre 1 et nombre 2 selon operator 
+ * @returns calcul nombre 1 et nombre 2 selon operator 
  */
 function operation(nombre1:number, nombre2:number, operateur:string) :number {
     let result:number = 0;
@@ -154,3 +154,38 @@ function operation(nombre1:number, nombre2:number, operateur:string) :number {
 }
 
 // Exerice 8
+
+
+
+// Exercice 9
+
+/**
+ * liste de toutes les monnaies qui existe
+ */
+const monnaie:number[] = [500,200,100,50,20,10,5,2,1,0.50,0.20,0.10,0.05,0.02,0.01];
+
+/**
+ * permet de savoir se qu'il faut précisément rendre comme monnaie a la personne
+ * @param somme 
+ * @returns string avec tous les billets/pieces present
+ */
+function billets(somme:number) :string {
+    let result:string = `Somme totale : ${somme}\n`;
+    let sommeCourante:number = somme;
+
+    //permet de verifier si on une piece/un billet chaque monnaie qui existe
+    monnaie.forEach(monnaie => {
+        let nombreMonnaie:number = Math.floor(sommeCourante/monnaie);
+        sommeCourante = sommeCourante%monnaie;
+        if (monnaie >= 5 && nombreMonnaie > 0) { // on a des billets
+            result += `Billet de ${monnaie} : ${nombreMonnaie}\n`
+        } else if(monnaie < 5 && nombreMonnaie > 0) { // on a des pieces
+            result += `Pièce de ${monnaie} : ${nombreMonnaie}\n`
+        }
+    });
+    return result
+}
+console.log(billets(123.45));
+
+// Exercice 10
+
