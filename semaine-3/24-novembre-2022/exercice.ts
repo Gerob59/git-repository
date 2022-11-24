@@ -173,6 +173,12 @@ function pyramide(taille: number): string {
     }
     resultat += "\n";
   }
+  for (let indexLigne = taille - 1; indexLigne >= 0; indexLigne--) {
+    for (let indexColone = 0; indexColone <= indexLigne; indexColone++) {
+      resultat += "*";
+    }
+    resultat += "\n";
+  }
   return resultat;
 }
 console.log(pyramide(5));
@@ -192,7 +198,7 @@ const monnaie: number[] = [
  * @returns string avec tous les billets/pieces present
  */
 function billets(somme: number): string {
-  let result: string = `Somme totale : ${somme}\n`;
+  let result: string = `Somme totale : ${somme}€\n`;
   let sommeCourante: number = somme;
 
   //permet de verifier si on une piece/un billet chaque monnaie qui existe
@@ -201,15 +207,15 @@ function billets(somme: number): string {
     sommeCourante = sommeCourante % monnaie;
     // on a des billets
     if (monnaie >= 5 && nombreMonnaie > 0) {
-      result += `Billet de ${monnaie} : ${nombreMonnaie}\n`;
+      result += `Billet de ${monnaie}€ : ${nombreMonnaie}\n`;
     }
     // on a des pieces
     else if (monnaie < 5 && nombreMonnaie > 0) {
-      result += `Pièce de ${monnaie} : ${nombreMonnaie}\n`;
+      result += `Pièce de ${monnaie}€ : ${nombreMonnaie}\n`;
     }
   });
   return result;
 }
-console.log(billets(123.45));
+console.log(billets(888.88));
 
 // Exercice 10
