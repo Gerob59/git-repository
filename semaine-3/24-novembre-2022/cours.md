@@ -20,3 +20,7 @@ return param1;
 
 function name (param1: type, ...param2:type[]): type {
 }
+
+# compiler
+
+ts-node `fichier`
