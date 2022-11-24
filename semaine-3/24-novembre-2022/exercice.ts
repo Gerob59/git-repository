@@ -109,21 +109,21 @@ function moyenne(notes:number[]) :number {
  * @returns appreciation
  */
 function appreciation(moyenne:number) :string {
-    let resultat:string = "";
+    let result:string = "";
      if (moyenne > 20 || moyenne < 0) {
-        resultat = "Note non valide";
+        result = "Note non valide";
     } else if (moyenne >= 19) {
-        resultat = "Très bien"
+        result = "Très bien"
     } else if (moyenne >= 15) {
-        resultat = "Bien"
+        result = "Bien"
     } else if (moyenne >= 11) {
-        resultat = "Passable"
+        result = "Passable"
     } else if (moyenne >= 5) {
-        resultat = "Insuffisant"
+        result = "Insuffisant"
     } else {
-        resultat = "Catastrophique"
+        result = "Catastrophique"
     }
-    return resultat;
+    return result;
 }
 
 console.log(lazy("Corine de la Compta",12,15,10));
