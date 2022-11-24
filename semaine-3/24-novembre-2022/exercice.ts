@@ -152,6 +152,8 @@ function operation(nombre1:number, nombre2:number, operateur:string) :number {
     }
     return result;
 }
+console.log(operation(12,2,'/'));
+ 
 
 // Exerice 8
 
