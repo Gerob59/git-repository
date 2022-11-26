@@ -272,3 +272,9 @@ function plusProcheDeZero(...temperatures: string[]): string {
   return plusProcheZeroString;
 }
 console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
+
+// exercice 11
+
+function centraleDeTri(...nombres: number[]): number[] {
+  return [];
+}
