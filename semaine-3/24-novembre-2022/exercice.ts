@@ -216,3 +216,10 @@ function billets(somme: number): string {
 console.log(billets(888.88));
 
 // Exercice 10
+
+function procheDeZero(...nombres:number[]) :number {
+
+
+  return 0;
+}
+console.log(procheDeZero(15,-10,13));
