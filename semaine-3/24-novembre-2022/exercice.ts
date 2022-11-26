@@ -12,7 +12,7 @@ console.log(bonjour("Michel"));
 // Exerice 2
 
 /**
- * Fonction qui addition entre 2 nombres
+ * Fonction qui addition entre 2 temperatures
  * @param nombre1
  * @param nombre2
  * @returns nombre1 + nombre2
@@ -42,7 +42,7 @@ console.log(gain(15, 15));
 // Exerice 4
 
 /**
- * Fonction qui sert a savoir le plus grand entre 3 nombres
+ * Fonction qui sert a savoir le plus grand entre 3 temperatures
  * @param nombre1
  * @param nombre2
  * @param nombre3
@@ -63,14 +63,14 @@ console.log(plusGrand(2, 4, 3));
 
 /**
  * la fonction recoit une liste de nombre
- * @param nombres
+ * @param temperatures
  * @returns le plus grand
  */
-function plusGrandTab(...nombres: number[]): number {
-  let plusGrand: number = nombres[0];
-  for (let index = 1; index < nombres.length; index++) {
-    if (nombres[index] > plusGrand) {
-      plusGrand = nombres[index];
+function plusGrandTab(...temperatures: number[]): number {
+  let plusGrand: number = temperatures[0];
+  for (let index = 1; index < temperatures.length; index++) {
+    if (temperatures[index] > plusGrand) {
+      plusGrand = temperatures[index];
     }
   }
   return plusGrand;
@@ -131,7 +131,7 @@ console.log(lazy("Corine de la Compta", 12, 15, 10));
 // Exerice 7
 
 /**
- * permet le calcul entre 2 nombres
+ * permet le calcul entre 2 temperatures
  * @param nombre1
  * @param nombre2
  * @param operateur uniquement '+' '-' '*' '/'
@@ -231,3 +231,44 @@ function procheDeZero(...nombres: number[]): number {
   return plusProche;
 }
 console.log(procheDeZero(15, 10, -10));
+
+// Extension Exercice 10
+
+/**
+ * Permet d'avoir la température en °C ou en °F la plus proche de 0 parmis une liste de température
+ * @param temperatures liste de températures °C/°F
+ * @returns la température la plus proche de 0
+ */
+function plusProcheDeZero(...temperatures: string[]): string {
+  // initialisé au premier élèment de la list
+  //contient toute la string de la température la plus proche de 0 (ex: "42°C")
+  let plusProcheZeroString: string = temperatures[0];
+  //contient uniquement la valeur numérique de la température (ex : 42, 7, 404)
+  let plusProcheZeroNumber: number = Math.abs(
+    parseFloat(temperatures[0].substring(0, plusProcheZeroString.length - 2))
+  );
+
+  //boucle pour parcourir tout le tableau
+  for (let index = 1; index < temperatures.length; index++) {
+    //contient toute la string de la température que l'on test (ex: "18°C")
+    let currentString: string = temperatures[index];
+    //contient uniquement la valeur numérique de la valeur que l'on test (ex : 18)
+    let currentNumber: number = Math.abs(
+      parseFloat(temperatures[index].substring(0, currentString.length - 2))
+    );
+    console.log(`currentNumber boucle ${index}: ${currentNumber}`);
+
+    // verifie si la température courante est en °C ou °F
+    if (currentString.substring(currentString.length - 2) === "°F") {
+      currentNumber = (currentNumber - 32) * (5 / 9);
+    }
+
+    // compare pour savoir quelle température est la plus proche de 0 (positive ou negative)
+    if (plusProcheZeroNumber > currentNumber) {
+      plusProcheZeroNumber = currentNumber;
+      plusProcheZeroString = currentString;
+    }
+  }
+  return plusProcheZeroString;
+}
+console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
