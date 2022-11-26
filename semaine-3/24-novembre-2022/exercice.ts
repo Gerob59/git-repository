@@ -275,6 +275,11 @@ console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
 
 // exercice 11
 
+/**
+ * prends en parametre une liste de nombres et renvoie le tableau de nombres rangé en ordre croissant
+ * @param nombres la liste de nombre a trier
+ * @returns tableau de nombres rangé en ordre croissant
+ */
 function centraleDeTri(...nombres: number[]): number[] {
   return [];
 }
