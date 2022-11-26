@@ -276,10 +276,36 @@ console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
 // exercice 11
 
 /**
- * prends en parametre une liste de nombres et renvoie le tableau de nombres rangé en ordre croissant
- * @param nombres la liste de nombre a trier
- * @returns tableau de nombres rangé en ordre croissant
+ * prends en parametre un tableau de nombre et le renvoi rangé en ordre croissant
+ * @param nombres la liste de nombre à trier
+ * @returns tableau de nombre rangé en ordre croissant
  */
-function centraleDeTri(...nombres: number[]): number[] {
-  return [];
+function centraleDeTri(nombres: number[]): number[] {
+  if (nombres.length > 1) {
+    //nombre pivot que l'on utilise pour partiellement trier le tableau
+    const pivot: number = nombres[nombres.length];
+    //tableau contenant les nombres plus petit que le pivot
+    const smallestNumberTab: number[] = [];
+    //tableau contenant les nombres plus grand que le pivot
+    const biggestNumberTab: number[] = [];
+
+    //length - 1, car on ne tri pas le pivot
+    for (let index = 0; index < nombres.length - 1; index++) {
+      const element = nombres[index];
+      if (element < pivot) {
+        smallestNumberTab.push(element);
+      } else {
+        biggestNumberTab.push(element);
+      }
+    }
+
+    // appel récursif en concaténant les tableaux
+    return centraleDeTri(smallestNumberTab).concat(
+      [pivot],
+      centraleDeTri(biggestNumberTab)
+    );
+  } else {
+    return nombres;
+  }
 }
+console.log(centraleDeTri([9, -3, 5, 2, 6, 8, -6, 1, 3]));
