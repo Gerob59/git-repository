@@ -166,18 +166,15 @@ console.log(operation(12, 2, "/"));
  * @returns pyramide en *
  */
 function pyramide(taille: number): string {
-  let resultat: string = "";
-  for (let indexLigne = 0; indexLigne < taille; indexLigne++) {
-    for (let indexColone = 0; indexColone <= indexLigne; indexColone++) {
-      resultat += "*";
+  let resultat:string = "";
+  let ligne:string = "";
+  for (let index = 0; index < taille*2-1; index++) {
+    if (index < taille) {
+      ligne+="*";
+    } else {
+      ligne = ligne.substring(1);
     }
-    resultat += "\n";
-  }
-  for (let indexLigne = taille - 1; indexLigne >= 0; indexLigne--) {
-    for (let indexColone = 0; indexColone <= indexLigne; indexColone++) {
-      resultat += "*";
-    }
-    resultat += "\n";
+    resultat += ligne + "\n"
   }
   return resultat;
 }
