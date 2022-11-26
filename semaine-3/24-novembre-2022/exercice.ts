@@ -1,7 +1,9 @@
 // Exerice 1
 
 /**
- *  Fonction qui dit bonjour à 'prenom'
+ * Fonction qui dit bonjour à 'prenom'
+ * @param prenom prenom de la personne
+ * @returns Bonjour personne
  */
 function bonjour(prenom: string): string {
   return `Bonjour ${prenom} !`;
@@ -13,8 +15,8 @@ console.log(bonjour("Michel"));
 
 /**
  * Fonction qui addition entre 2 temperatures
- * @param nombre1
- * @param nombre2
+ * @param nombre1 nombre 1
+ * @param nombre2 nombre 2
  * @returns nombre1 + nombre2
  */
 function calcul(nombre1: number, nombre2: number): number {
@@ -25,9 +27,9 @@ console.log(calcul(3, 5));
 // Exerice 3
 
 /**
- * Fonction qui annonce le gain ou la perte en €
- * @param coutFabrication
- * @param prixVente
+ * Fonction qui annonce le gain ou la perte en € d'un produit
+ * @param coutFabrication cout de fabrication du produit
+ * @param prixVente prix de vente du produit
  * @returns difference entre coutFabrication et prixVente
  */
 function gain(coutFabrication: number, prixVente: number): string {
@@ -37,16 +39,16 @@ function gain(coutFabrication: number, prixVente: number): string {
     return `Gain de ${prixVente - coutFabrication}€`;
   }
 }
-console.log(gain(15, 15));
+console.log(gain(20, 15));
 
 // Exerice 4
 
 /**
- * Fonction qui sert a savoir le plus grand entre 3 temperatures
- * @param nombre1
- * @param nombre2
- * @param nombre3
- * @returns Le plus grand
+ * Fonction qui sert a savoir le plus grand entre 3 nombres
+ * @param nombre1 un nombre
+ * @param nombre2 un nombre
+ * @param nombre3 un nombre
+ * @returns Le plus grand des 3
  */
 function plusGrand(nombre1: number, nombre2: number, nombre3: number): number {
   if (nombre1 >= nombre2 && nombre1 >= nombre3) {
@@ -59,12 +61,30 @@ function plusGrand(nombre1: number, nombre2: number, nombre3: number): number {
 }
 console.log(plusGrand(2, 4, 3));
 
+// Exercice 4 - Bonus
+
+/**
+ * Fonction qui sert a savoir le plus grand entre 3 nombres avec Math.max()
+ * @param nombre1 un nombre
+ * @param nombre2 un nombre
+ * @param nombre3 un nombre
+ * @returns Le plus grand des 3
+ */
+function plusGrandMath(
+  nombre1: number,
+  nombre2: number,
+  nombre3: number
+): number {
+  return Math.max(nombre1, nombre2, nombre3);
+}
+console.log(plusGrandMath(2, 4, 3));
+
 // Exerice 5
 
 /**
- * la fonction recoit une liste de nombre
- * @param temperatures
- * @returns le plus grand
+ * la fonction recoit une liste de nombre et détermine le plus grand
+ * @param temperatures liste de nombre
+ * @returns le plus grand de la liste
  */
 function plusGrandTab(...temperatures: number[]): number {
   let plusGrand: number = temperatures[0];
@@ -77,22 +97,34 @@ function plusGrandTab(...temperatures: number[]): number {
 }
 console.log(plusGrandTab(12, 5, 3, 14, 14));
 
+// Exercice 5 - bonus
+
+/**
+ * la fonction recoit une liste de nombre et détermine le plus grand
+ * @param temperatures liste de nombre
+ * @returns le plus grand de la liste
+ */
+function plusGrandTabMath(...temperatures: number[]): number {
+  return Math.max(...temperatures);
+}
+console.log(plusGrandTabMath(12, 5, 3, 14, 14));
+
 // Exerice 6
 
 /**
- *
+ * professeur paraisseux veux avoir l'appréciation automatique d'un élève par rapport a ses notes
  * @param prenom prenom de l'élève
  * @param notes utilise la fonction 'moyenne(notes:number[])' pour avoir la moyenne le l'élève
- * @returns prenom + moyenne + appreciation
+ * @returns prenom / moyenne / appreciation
  */
-function lazy(prenom: string, ...notes: number[]): string {
-  const moy: number = moyenne(notes);
-  return `${prenom} : ${moy}, ${appreciation(moy)}`;
+function paraisseux(prenom: string, ...notes: number[]): string {
+  const moyenneEleve: number = moyenne(notes);
+  return `${prenom} : ${moyenneEleve}, ${appreciation(moyenneEleve)}`;
 }
 
 /**
  * Fait la moyenne de toutes les notes
- * @param notes
+ * @param notes liste des notes
  * @returns moyenne des notes
  */
 function moyenne(notes: number[]): number {
@@ -105,35 +137,35 @@ function moyenne(notes: number[]): number {
 
 /**
  * Donne l'appréciation par rapport a la moyenne de l'élève
- * @param moyenne
- * @returns appreciation de l'élève
+ * @param moyenne moyenne des notes
+ * @returns appreciation de l'élève par rapport a sa note
  */
 function appreciation(moyenne: number): string {
-  let result: string = "";
+  let resultat: string = "";
   if (moyenne > 20 || moyenne < 0) {
-    result = "Note non valide";
+    resultat = "Note non valide";
   } else if (moyenne >= 19) {
-    result = "Très bien";
+    resultat = "Très bien";
   } else if (moyenne >= 15) {
-    result = "Bien";
+    resultat = "Bien";
   } else if (moyenne >= 11) {
-    result = "Passable";
+    resultat = "Passable";
   } else if (moyenne >= 5) {
-    result = "Insuffisant";
+    resultat = "Insuffisant";
   } else {
-    result = "Catastrophique";
+    resultat = "Catastrophique";
   }
-  return result;
+  return resultat;
 }
 
-console.log(lazy("Corine de la Compta", 12, 15, 10));
+console.log(paraisseux("Corine de la Compta", 12, 15, 10));
 
 // Exerice 7
 
 /**
  * permet le calcul entre 2 temperatures
- * @param nombre1
- * @param nombre2
+ * @param nombre1 un nombre
+ * @param nombre2 un nombre sauf 0 en cas de division
  * @param operateur uniquement '+' '-' '*' '/'
  * @returns calcul nombre 1 et nombre 2 selon operator
  */
@@ -142,31 +174,31 @@ function operation(
   nombre2: number,
   operateur: string
 ): number {
-  let result: number = 0;
+  let resultat: number = 0;
   if (operateur === "+") {
-    result = nombre1 + nombre2;
+    resultat = nombre1 + nombre2;
   } else if (operateur === "-") {
-    result = nombre1 - nombre2;
+    resultat = nombre1 - nombre2;
   } else if (operateur === "*") {
-    result = nombre1 * nombre2;
-  } else if (operateur === "/") {
-    result = nombre1 / nombre2;
+    resultat = nombre1 * nombre2;
+  } else if (operateur === "/" && nombre2 !== 0) {
+    resultat = nombre1 / nombre2;
   } else {
-    result = 0;
+    resultat = 0;
   }
-  return result;
+  return resultat;
 }
 console.log(operation(12, 2, "/"));
 
 // Exerice 8
 
 /**
- * fabrique une pyramide horizontal de '*'
- * @param taille taille de la pyramide
- * @returns pyramide en *
+ * fabrique une pyramideVertical horizontal de '*'
+ * @param taille taille de la pyramideVertical
+ * @returns pyramideVertical en *
  */
-function pyramide(taille: number): string {
-  let resultat: string = "";
+function pyramideVertical(taille: number): string {
+  let resultatat: string = "";
   let ligne: string = "";
   for (let index = 0; index < taille * 2 - 1; index++) {
     if (index < taille) {
@@ -174,44 +206,44 @@ function pyramide(taille: number): string {
     } else {
       ligne = ligne.substring(1);
     }
-    resultat += ligne + "\n";
+    resultatat += ligne + "\n";
   }
-  return resultat;
+  return resultatat;
 }
-console.log(pyramide(5));
+console.log(pyramideVertical(5));
 
 // Exercice 9
 
 /**
- * liste de toutes les monnaies qui existe
+ * liste de toutes les monnaiess qui existe
  */
-const monnaie: number[] = [
+const monnaies: number[] = [
   500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01,
 ];
 
 /**
- * permet de savoir se qu'il faut précisément rendre comme monnaie a la personne
- * @param somme
- * @returns string avec tous les billets/pieces present
+ * permet de savoir se qu'il faut précisément rendre comme monnaies a la personne
+ * @param somme somme d'agent a rendre
+ * @returns resultat avec tous les billets/pieces present
  */
 function billets(somme: number): string {
-  let result: string = `Somme totale : ${somme}€\n`;
+  let resultat: string = `Somme totale : ${somme}€\n`;
   let sommeCourante: number = somme;
 
-  //permet de verifier si on une piece/un billet chaque monnaie qui existe
-  monnaie.forEach((monnaie) => {
-    let nombreMonnaie: number = Math.floor(sommeCourante / monnaie);
-    sommeCourante = sommeCourante % monnaie;
+  //permet de verifier si on une piece/un billet chaque monnaies qui existe
+  monnaies.forEach((monnaies) => {
+    let nombreMonnaies: number = Math.floor(sommeCourante / monnaies);
+    sommeCourante = sommeCourante % monnaies;
     // on a des billets
-    if (monnaie >= 5 && nombreMonnaie > 0) {
-      result += `Billet de ${monnaie}€ : ${nombreMonnaie}\n`;
+    if (monnaies >= 5 && nombreMonnaies > 0) {
+      resultat += `Billet de ${monnaies}€ : ${nombreMonnaies}\n`;
     }
     // on a des pieces
-    else if (monnaie < 5 && nombreMonnaie > 0) {
-      result += `Pièce de ${monnaie}€ : ${nombreMonnaie}\n`;
+    else if (monnaies < 5 && nombreMonnaies > 0) {
+      resultat += `Pièce de ${monnaies}€ : ${nombreMonnaies}\n`;
     }
   });
-  return result;
+  return resultat;
 }
 console.log(billets(888.88));
 
@@ -251,61 +283,61 @@ function plusProcheDeZero(...temperatures: string[]): string {
   //boucle pour parcourir tout le tableau
   for (let index = 1; index < temperatures.length; index++) {
     //contient toute la string de la température que l'on test (ex: "18°C")
-    let currentString: string = temperatures[index];
+    let elementString: string = temperatures[index];
     //contient uniquement la valeur numérique de la valeur que l'on test (ex : 18)
-    let currentNumber: number = Math.abs(
-      parseFloat(temperatures[index].substring(0, currentString.length - 2))
+    let elementNumber: number = Math.abs(
+      parseFloat(temperatures[index].substring(0, elementString.length - 2))
     );
-    console.log(`currentNumber boucle ${index}: ${currentNumber}`);
 
     // verifie si la température courante est en °C ou °F
-    if (currentString.substring(currentString.length - 2) === "°F") {
-      currentNumber = (currentNumber - 32) * (5 / 9);
+    if (elementString.substring(elementString.length - 2) === "°F") {
+      elementNumber = (elementNumber - 32) * (5 / 9);
     }
 
     // compare pour savoir quelle température est la plus proche de 0 (positive ou negative)
-    if (plusProcheZeroNumber > currentNumber) {
-      plusProcheZeroNumber = currentNumber;
-      plusProcheZeroString = currentString;
+    if (plusProcheZeroNumber > elementNumber) {
+      plusProcheZeroNumber = elementNumber;
+      plusProcheZeroString = elementString;
     }
   }
   return plusProcheZeroString;
 }
 console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
 
-// exercice 11
+// // exercice bonus
 
-/**
- * prends en parametre un tableau de nombre et le renvoi rangé en ordre croissant
- * @param nombres la liste de nombre à trier
- * @returns tableau de nombre rangé en ordre croissant
- */
-function centraleDeTri(nombres: number[]): number[] {
-  if (nombres.length > 1) {
-    //nombre pivot que l'on utilise pour partiellement trier le tableau
-    const pivot: number = nombres[nombres.length];
-    //tableau contenant les nombres plus petit que le pivot
-    const smallestNumberTab: number[] = [];
-    //tableau contenant les nombres plus grand que le pivot
-    const biggestNumberTab: number[] = [];
+// /**
+//  * prends en parametre un tableau de nombre et le renvoi rangé en ordre croissant
+//  * @param nombres la liste de nombre à trier
+//  * @returns tableau de nombre rangé en ordre croissant
+//  */
+// function centraleDeTri(nombres: number[]): number[] {
+//   //on verifie la condition d'arret (plus qu'un seul element dans le tableau)
+//   if (nombres.length > 1) {
+//     //nombre pivot que l'on utilise pour partiellement trier le tableau
+//     const pivot: number = nombres[nombres.length];
+//     //tableau contenant les nombres plus petit que le pivot
+//     const plusPetitTab: number[] = [];
+//     //tableau contenant les nombres plus grand que le pivot
+//     const plusGrandTab: number[] = [];
 
-    //length - 1, car on ne tri pas le pivot
-    for (let index = 0; index < nombres.length - 1; index++) {
-      const element = nombres[index];
-      if (element < pivot) {
-        smallestNumberTab.push(element);
-      } else {
-        biggestNumberTab.push(element);
-      }
-    }
+//     //length - 1, car on ne tri pas le pivot
+//     for (let index = 0; index < nombres.length - 1; index++) {
+//       const element = nombres[index];
+//       if (element < pivot) {
+//         plusPetitTab.push(element);
+//       } else {
+//         plusGrandTab.push(element);
+//       }
+//     }
 
-    // appel récursif en concaténant les tableaux
-    return centraleDeTri(smallestNumberTab).concat(
-      [pivot],
-      centraleDeTri(biggestNumberTab)
-    );
-  } else {
-    return nombres;
-  }
-}
-console.log(centraleDeTri([9, -3, 5, 2, 6, 8, -6, 1, 3]));
+//     // appel récursif en concaténant les tableaux
+//     return centraleDeTri(plusPetitTab).concat(
+//       [pivot],
+//       centraleDeTri(plusGrandTab)
+//     );
+//   } else {
+//     return nombres;
+//   }
+// }
+// console.log(centraleDeTri([9, -3, 5, 2, 6, 8, -6, 1, 3]));
