@@ -166,15 +166,15 @@ console.log(operation(12, 2, "/"));
  * @returns pyramide en *
  */
 function pyramide(taille: number): string {
-  let resultat:string = "";
-  let ligne:string = "";
-  for (let index = 0; index < taille*2-1; index++) {
+  let resultat: string = "";
+  let ligne: string = "";
+  for (let index = 0; index < taille * 2 - 1; index++) {
     if (index < taille) {
-      ligne+="*";
+      ligne += "*";
     } else {
       ligne = ligne.substring(1);
     }
-    resultat += ligne + "\n"
+    resultat += ligne + "\n";
   }
   return resultat;
 }
@@ -217,9 +217,12 @@ console.log(billets(888.88));
 
 // Exercice 10
 
-function procheDeZero(...nombres:number[]) :number {
-
-
-  return 0;
+function procheDeZero(...nombres: number[]): number {
+  let plusProche: number = nombres[0];
+  for (let index = 1; index < nombres.length; index++) {
+    if (Math.abs(plusProche) > Math.abs(nombres[index]))
+      plusProche = nombres[index];
+  }
+  return plusProche;
 }
-console.log(procheDeZero(15,-10,13));
+console.log(procheDeZero(15, 10, -10));
