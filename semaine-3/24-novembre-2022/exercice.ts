@@ -217,6 +217,11 @@ console.log(billets(888.88));
 
 // Exercice 10
 
+/**
+ *
+ * @param nombres liste de températures
+ * @returns la températur la plus proche de 0
+ */
 function procheDeZero(...nombres: number[]): number {
   let plusProche: number = nombres[0];
   for (let index = 1; index < nombres.length; index++) {
