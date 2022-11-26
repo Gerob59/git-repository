@@ -1,10 +1,13 @@
 # event
+
 <!-- les plus utiles -->
+
 click
 submit
 load
 
 <!-- les autres -->
-change 
+
+change
 mouseover <!-- 99% dans le css -->
 ...

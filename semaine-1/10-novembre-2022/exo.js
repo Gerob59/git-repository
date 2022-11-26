@@ -154,5 +154,5 @@ const profitFleche = (prixFabrication, prixVente) => {
   prixVente > prixFabrication
     ? console.log(`Profit de ${prixVente - prixFabrication}€`)
     : console.log(`perte de ${prixFabrication - prixVente}€`);
-}
+};
 profitFleche(prixFab, prixProd);

@@ -2,13 +2,15 @@
 
 768 : tel
 <1024 : tablette
->1024 : pc
+
+> 1024 : pc
 
 @media type (caracteristique) {
-    <!--selecteur 1-->
-    <!--selecteur 2-->
-    <!-- ... -->
+<!--selecteur 1-->
+<!--selecteur 2-->
+<!-- ... -->
 }
+
 <!--<link rel= -->
 
 all, print, screen, sreech

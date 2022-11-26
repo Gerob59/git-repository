@@ -5,12 +5,14 @@ shift + alt + f = identation automatique
 ## Les principes
 
 ### DRY
+
 D : don’t
 R : repeat
 Y : yourself
 Ne te répète pas
 
 ### KISS
+
 K : keep
 I : it
 S : simple
@@ -18,6 +20,7 @@ S : stupid
 garde le simple, stupide
 
 ### YAGNI
+
 Y : You
 A : Ain't
 G : Gonna
@@ -26,8 +29,9 @@ I : It
 tu n'auras pas besoin de ça
 
 ### SOLID
+
 fiable, robuste, comprehensible, flexible et maintenable
-S : Single Responsibility  (une classe, une fonction ou une méthode... doit avoir une et une seule responsabilité)
+S : Single Responsibility (une classe, une fonction ou une méthode... doit avoir une et une seule responsabilité)
 O : Open/Closed (ouvert a l'extension / fermé à la modification)
 L : Liskov’s Substitution (classe T parent peut être remplacée par classe G enfant, sans que cela ne casse le programme)
 I : Interface Segregation (préférer plusieurs interfaces spécifiques plutôt qu'une seule interface générale)
@@ -36,31 +40,35 @@ D : Dependency Inversion (il faut dépendre des abstractions, pas des implément
 ### Autres
 
 #### MoSCoW
+
 M : must have this
 S : should have this if at all possible
 C : could have this if it does not affect anything else,
 W : won't have this time but would like in the future
 
 #### Abstraction
+
 SuperClass non instantiable qui regroupe des caractéristiques et traitements communs
 
 #### Loi de Déméter
+
 loi pour les fonctions et les méthodes avec principe, la connaissance minimale.
 "Ne parlez qu'à vos amis immédiats"
 ex : this.voiture.moteur.demarrer(); /!\
 ex : this.voiture.demarrer(); --qui entraine-> this.moteur.demarrer();
 
 ## exemple
-MARTEAU         TOURNEVIS               OUTILS (classe abstraite)
-manche          manche                  manche      
-marque          marque     --deviens->  marque 
-couleur         couleur                 couleur
-matériau        matériau                matériau
-enfoncer        visser                  /      \
-                                       /héritage\ 
-                                      /          \
-                                   MARTEAU     TOURNEVIS
-                                   enfoncer    visser
+
+MARTEAU TOURNEVIS OUTILS (classe abstraite)
+manche manche manche  
+marque marque --deviens-> marque
+couleur couleur couleur
+matériau matériau matériau
+enfoncer visser / \
+ /héritage\
+/ \
+ MARTEAU TOURNEVIS
+enfoncer visser
 
 ## types
 
@@ -78,8 +86,8 @@ age += 2;
 age = age - 2; <!---soustractions --->
 age -= 2;
 
-age = age * 2; <!--- multiplications --->
-age *= 2;
+age = age _ 2; <!--- multiplications --->
+age _= 2;
 
 age = age / 2; <!--- divisions entiere / resultat : 14 --->
 
@@ -100,31 +108,31 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Bo
 
 TRUE
 FALSE
-&&  --> et (vrai && vrai = vrai / vrai && faux = faux / faux && faux = faux)
-||  --> ou (vrai || vrai = vrai / vrai && faux = faux / faux && faux = faux)
+&& --> et (vrai && vrai = vrai / vrai && faux = faux / faux && faux = faux)
+|| --> ou (vrai || vrai = vrai / vrai && faux = faux / faux && faux = faux)
 
 ### Comparaison
 
-=   --> assignation
-==  --> comparaison entre 2 valeurs 
+= --> assignation
+== --> comparaison entre 2 valeurs
 === --> comparaison stricte (valeur et type)
-!=  --> difference entre 2 valeurs 
+!= --> difference entre 2 valeurs
 !== --> difference stricte (valeur et type)
-<   --> plus petit
-\>  --> plus grand
-<=  --> plus petit ou egale
-\>= --> plus grand ou egale 
-!   --> not (!True === false)
+< --> plus petit
+\> --> plus grand
+<= --> plus petit ou egale
+\>= --> plus grand ou egale
+! --> not (!True === false)
 
 ## commentaire
 
 ### mauvais façon
 
-/* ceci est un mauvais commentaire <!-- code mort -->
+/_ ceci est un mauvais commentaire <!-- code mort -->
 let age = 30;
 ++age;
 console.log(age);
-*/
+_/
 
 ### bonne façon
 
@@ -133,13 +141,14 @@ let age = 30; //mon age
 ++age;
 console.log(age);
 
-/**[enter] --> génère toute la doc
+/\*\*[enter] --> génère toute la doc
 
-/* commentaire
-* sur plusieurs
-*/ ligne
+/\* commentaire
 
-let maVariable /* Un commentaire inséré */ = 'une valeur';
+- sur plusieurs
+  \*/ ligne
+
+let maVariable /_ Un commentaire inséré _/ = 'une valeur';
 console.log(maVariable); //Affiche 'une valeur'
 
 ## tableau
@@ -149,34 +158,34 @@ une variable qui contient une liste d'élément.
 let tableau = ["Chien", "Chat", "Oiseau", "Lapin"];
 tableau[2] === "Oiseau";
 
-*tableau.push("Poulet");* <!-- ["Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
+_tableau.push("Poulet");_ <!-- ["Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
 
-*tableau.unshift("KFC");* <!-- ["KFC", "Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
+_tableau.unshift("KFC");_ <!-- ["KFC", "Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
 
-*tableau.shift();* <!-- ["Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
+_tableau.shift();_ <!-- ["Chien", "Chat", "Oiseau", "Lapin", "Poulet"] -->
 
-*tableau.pop();* <!-- ["Chien", "Chat", "Oiseau", "Lapin"] -->
+_tableau.pop();_ <!-- ["Chien", "Chat", "Oiseau", "Lapin"] -->
 
 let maVariable = "Toto";
 let monTableau = [10, "Tata", True, maVariable];
 
-*monTableau.length;* <!-- resultat 4 -->
+_monTableau.length;_ <!-- resultat 4 -->
 
-*monTableau.splice(index du premier elem, nb elem à suppr);*
+_monTableau.splice(index du premier elem, nb elem à suppr);_
 
 monTableau.splice(0, 1, 'Truc'); <!-- ['Truc', True, maVariable]; -->
 
-*monTableau.join(' ');* <!-- Truc True maVariable -->
+_monTableau.join(' ');_ <!-- Truc True maVariable -->
 
-let tab = [10, "titi", [15, "tata"], "tutu"] 
-*tab.flat();* <!-- [10, "titi", 15, "tata", "tutu"] -->
+let tab = [10, "titi", [15, "tata"], "tutu"]
+_tab.flat();_ <!-- [10, "titi", 15, "tata", "tutu"] -->
 
 ## clef
 
 let monObjet = {
-   nom: 'semifir',
-   age: 4,
-   ready: true
+nom: 'semifir',
+age: 4,
+ready: true
 };
 monObjet.age = 5; <!-- age === 5 -->
 
@@ -189,8 +198,9 @@ typeofvariable <!-- donne le type de la variable -->
 
 let variable = "titi";
 {
-   let variable = "tata";
-   console.log(variable); <!-- "tata"
+let variable = "tata";
+console.log(variable); <!-- "tata"
 }
 console.log(variable);
+
 <!-- "titi" -->

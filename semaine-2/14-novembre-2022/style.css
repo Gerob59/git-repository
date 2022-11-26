@@ -1,15 +1,20 @@
 td button {
-    width: 100%!important;
-    font-weight: 700!important;
+  width: 100% !important;
+  font-weight: 700 !important;
 }
-table th, table td {
-    border: 1px solid #eaeaea;
-    padding: 6px 10px;
+table th,
+table td {
+  border: 1px solid #eaeaea;
+  padding: 6px 10px;
 }
-body, button, input, select, textarea {
-    color: #444;
-    font-size: 16px;
-    font-family: open sans,serif;
-    line-height: 1.6;
-    word-wrap: break-word;
+body,
+button,
+input,
+select,
+textarea {
+  color: #444;
+  font-size: 16px;
+  font-family: open sans, serif;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
