@@ -1,4 +1,4 @@
-class Humain {
+abstract class Humain {
   protected _nom!: string;
   protected _prenom!: string;
   protected _dateNaissance!: Date;
