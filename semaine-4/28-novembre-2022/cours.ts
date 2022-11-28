@@ -26,3 +26,16 @@ function getChat(...surnoms: string[]): string {
   } kilos\nSes surnoms sont: ${surnoms.join(", ")}`;
 }
 console.log(getChat("chacha", "chachou", "pika", "gros tas"));
+
+class Formateur {
+  nom!: string;
+  prenom!: string;
+}
+
+let formateur1: Formateur = new Formateur();
+formateur1.nom = "Devos";
+formateur1.prenom = "Alexandre";
+
+console.log(
+  `${formateur1.nom} ${formateur1.prenom} est le formateur aujourd'hui`
+);
