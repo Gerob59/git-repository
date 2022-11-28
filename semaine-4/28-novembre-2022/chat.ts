@@ -11,23 +11,23 @@ class Chat {
     this.poid = poid;
   }
 
-  get nom(): string {
+  public get nom(): string {
     return this._nom;
   }
 
-  get race(): string {
+  public get race(): string {
     return this._race;
   }
 
-  get age(): number {
+  public get age(): number {
     return this._age;
   }
 
-  get poid(): number {
+  public get poid(): number {
     return this._poid;
   }
 
-  set nom(nouveauNom: string) {
+  public set nom(nouveauNom: string) {
     if (nouveauNom.trim().length > 1) {
       this._nom = nouveauNom;
     } else {
@@ -35,19 +35,19 @@ class Chat {
     }
   }
 
-  set race(nouvelleRace: string) {
+  public set race(nouvelleRace: string) {
     this._race = nouvelleRace;
   }
 
-  set age(nouvelleAge: number) {
-    this._age = nouvelleAge;
+  public set age(nouvelAge: number) {
+    this._age = nouvelAge;
   }
 
-  set poid(nouveauPoid: number) {
+  public set poid(nouveauPoid: number) {
     this._poid = nouveauPoid;
   }
 
-  afficherChat(): string {
+  public afficherChat(): string {
     return `nom:${this.nom}, race:${this.race}, age:${this.age}ans, poid:${this.poid}kilos`;
   }
 }
