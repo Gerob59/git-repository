@@ -112,14 +112,13 @@ console.log(plusGrandTabMath(12, 5, 3, 14, 14));
 // Exerice 6
 
 /**
- * professeur paraisseux veux avoir l'appréciation automatique d'un élève par rapport a ses notes
- * @param prenom prenom de l'élève
- * @param notes utilise la fonction 'moyenne(notes:number[])' pour avoir la moyenne le l'élève
- * @returns prenom / moyenne / appreciation
+ * prend un note de l'élève et vérifie si est elle valide
+ * @param note une note de l'élève
+ * @returns true si la note est valide, false sinon
  */
-function paraisseux(prenom: string, ...notes: number[]): string {
-  const moyenneEleve: number = moyenne(notes);
-  return `${prenom} : ${moyenneEleve}, ${appreciation(moyenneEleve)}`;
+function verifierNote(note: number): boolean {
+  if (note < 0 || note > 20) return false;
+  else return true;
 }
 
 /**
@@ -128,9 +127,13 @@ function paraisseux(prenom: string, ...notes: number[]): string {
  * @returns moyenne des notes
  */
 function moyenne(notes: number[]): number {
-  let moyenne: number = notes[0];
-  for (let index = 1; index < notes.length; index++) {
-    moyenne += notes[index];
+  let moyenne: number = 0;
+  for (let note of notes) {
+    if (verifierNote(note)) moyenne += note;
+    else
+      console.log(
+        `la note ${note} est 'non valide' et il est donc ignoré. DSL GROS.`
+      );
   }
   return moyenne / notes.length;
 }
@@ -142,20 +145,29 @@ function moyenne(notes: number[]): number {
  */
 function appreciation(moyenne: number): string {
   let resultat: string = "";
-  if (moyenne > 20 || moyenne < 0) {
-    resultat = "Note non valide";
-  } else if (moyenne >= 19) {
-    resultat = "Très bien";
-  } else if (moyenne >= 15) {
-    resultat = "Bien";
-  } else if (moyenne >= 11) {
-    resultat = "Passable";
-  } else if (moyenne >= 5) {
-    resultat = "Insuffisant";
-  } else {
+  if (moyenne < 5) {
     resultat = "Catastrophique";
+  } else if (moyenne < 11) {
+    resultat = "Insuffisant";
+  } else if (moyenne < 15) {
+    resultat = "Passable";
+  } else if (moyenne < 19) {
+    resultat = "Bien";
+  } else {
+    resultat = "Très bien";
   }
   return resultat;
+}
+
+/**
+ * professeur paraisseux veux avoir l'appréciation automatique d'un élève par rapport a ses notes
+ * @param prenom prenom de l'élève
+ * @param notes utilise la fonction 'moyenne(notes:number[])' pour avoir la moyenne le l'élève
+ * @returns prenom / moyenne / appreciation
+ */
+function paraisseux(prenom: string, ...notes: number[]): string {
+  const moyenneEleve: number = moyenne(notes);
+  return `${prenom} : ${moyenneEleve}, ${appreciation(moyenneEleve)}`;
 }
 
 console.log(paraisseux("Corine de la Compta", 12, 15, 10));
