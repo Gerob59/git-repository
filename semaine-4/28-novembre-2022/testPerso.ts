@@ -1,15 +1,7 @@
-// try {
-//   // first
-// } catch (error) {
-//   // catch an error
-// } finally {
-//   // after a succesfull try
-// }
-
 class Humain {
-  private _nom: string;
-  private _prenom: string;
-  private _dateNaissance: Date;
+  protected _nom!: string;
+  protected _prenom!: string;
+  protected _dateNaissance!: Date;
 
   constructor(nom: string, prenom: string, naissance: Date) {
     this.nom = nom;
@@ -42,10 +34,10 @@ class Humain {
   }
 
   get age(): number {
-    const dob = this.dateNaissance.toString();
-    const year: number = Number(dob.substring(0, 4));
-    const month: number = Number(dob.substring(4, 2)) - 1;
-    const day: number = Number(dob.substring(6, 2));
+    const dateDeNaissance = this.dateNaissance.toString();
+    const year: number = Number(dateDeNaissance.substring(0, 4));
+    const month: number = Number(dateDeNaissance.substring(4, 2)) - 1;
+    const day: number = Number(dateDeNaissance.substring(6, 2));
     const today: Date = new Date();
     let age = today.getFullYear() - year;
     if (

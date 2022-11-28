@@ -14,24 +14,35 @@ class Chat {
   get nom(): string {
     return this._nom;
   }
+
   get race(): string {
     return this._race;
   }
+
   get age(): number {
     return this._age;
   }
+
   get poid(): number {
     return this._poid;
   }
+
   set nom(nouveauNom: string) {
-    this._nom = nouveauNom;
+    if (nouveauNom.trim().length > 1) {
+      this._nom = nouveauNom;
+    } else {
+      throw new Error("Le nom est trop court");
+    }
   }
+
   set race(nouvelleRace: string) {
     this._race = nouvelleRace;
   }
+
   set age(nouvelleAge: number) {
     this._age = nouvelleAge;
   }
+
   set poid(nouveauPoid: number) {
     this._poid = nouveauPoid;
   }
