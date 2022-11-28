@@ -178,7 +178,7 @@ console.log(paraisseux("Corine de la Compta", 12, 15, 10));
  * permet le calcul entre 2 temperatures
  * @param nombre1 un nombre
  * @param nombre2 un nombre sauf 0 en cas de division
- * @param operateur uniquement '+' '-' '*' '/'
+ * @param operateur un opérateur, comme '+' '-' '*' '/'
  * @returns calcul nombre 1 et nombre 2 selon operator
  */
 function operation(
@@ -186,19 +186,8 @@ function operation(
   nombre2: number,
   operateur: string
 ): number {
-  let resultat: number = 0;
-  if (operateur === "+") {
-    resultat = nombre1 + nombre2;
-  } else if (operateur === "-") {
-    resultat = nombre1 - nombre2;
-  } else if (operateur === "*") {
-    resultat = nombre1 * nombre2;
-  } else if (operateur === "/" && nombre2 !== 0) {
-    resultat = nombre1 / nombre2;
-  } else {
-    resultat = 0;
-  }
-  return resultat;
+  if (operateur === "/" && nombre2 === 0) return NaN;
+  else return eval(`${nombre1}${operateur}${nombre2}`);
 }
 console.log(operation(12, 2, "/"));
 
