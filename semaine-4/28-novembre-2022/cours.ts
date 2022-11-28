@@ -1,41 +1,64 @@
-// try {
-//   // first
-// } catch (error) {
-//   // catch an error
-// } finally {
-//   // after a succesfull try
-// }
+class Humain {
+  #nom: string;
+  #prenom: string;
+  #dateNaissance: Date;
 
-type Chat = {
-  nom: string;
-  race: string;
-  age: number;
-  poid: number;
-};
+  constructor(nom: string, prenom: string, naissance: Date) {
+    this.#nom = nom;
+    this.#prenom = prenom;
+    this.#dateNaissance = naissance;
+  }
 
-const chat: Chat = {
-  nom: "pikachu",
-  race: "europeen",
-  age: 3,
-  poid: 4,
-};
+  getNom(): string {
+    return this.#nom;
+  }
 
-function getChat(...surnoms: string[]): string {
-  return `nom:${chat.nom}, race:${chat.race}, age:${chat.age}ans, poid:${
-    chat.poid
-  } kilos\nSes surnoms sont: ${surnoms.join(", ")}`;
+  getPrenom(): string {
+    return this.#prenom;
+  }
+
+  getDateNaissance(): Date {
+    return this.#dateNaissance;
+  }
+
+  getAge(): number {
+    const dob = this.getDateNaissance().toString();
+    const year: number = Number(dob.substring(0, 4));
+    const month: number = Number(dob.substring(4, 2)) - 1;
+    const day: number = Number(dob.substring(6, 2));
+    const today: Date = new Date();
+    let age = today.getFullYear() - year;
+    if (
+      today.getMonth() < month ||
+      (today.getMonth() == month && today.getDate() < day)
+    ) {
+      age--;
+    }
+    return age;
+  }
 }
-console.log(getChat("chacha", "chachou", "pika", "gros tas"));
+class Formateur extends Humain {
+  #societe!: string;
+  constructor(nom: string, prenom: string, naissance: Date) {
+    super(nom, prenom, naissance);
+  }
 
-class Formateur {
-  nom!: string;
-  prenom!: string;
+  getSociete(): string {
+    return this.#societe;
+  }
+
+  setSociete(nouvelleSociete: string) {
+    this.#societe = nouvelleSociete;
+  }
 }
 
-let formateur1: Formateur = new Formateur();
-formateur1.nom = "Devos";
-formateur1.prenom = "Alexandre";
+const formateur1: Formateur = new Formateur(
+  "Devos",
+  "Alexandre",
+  new Date("1994-06-14")
+);
+formateur1.setSociete("Sémifir");
 
 console.log(
-  `${formateur1.nom} ${formateur1.prenom} est le formateur aujourd'hui`
+  `Aujourd'hui, ${formateur1.getPrenom()} ${formateur1.getNom()} est le formateur venant de la société ${formateur1.getSociete()}. Il a ${formateur1.getAge()}ans`
 );
