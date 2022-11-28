@@ -199,7 +199,7 @@ console.log(operation(12, 2, "/"));
  * @returns pyramideVertical en *
  */
 function pyramideVertical(taille: number): string {
-  let resultatat: string = "";
+  let resultat: string = "";
   let ligne: string = "";
   for (let index = 0; index < taille * 2 - 1; index++) {
     if (index < taille) {
@@ -207,20 +207,13 @@ function pyramideVertical(taille: number): string {
     } else {
       ligne = ligne.substring(1);
     }
-    resultatat += ligne + "\n";
+    resultat += ligne + "\n";
   }
-  return resultatat;
+  return resultat;
 }
 console.log(pyramideVertical(5));
 
 // Exercice 9
-
-/**
- * liste de toutes les monnaiess qui existe
- */
-const monnaies: number[] = [
-  500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01,
-];
 
 /**
  * permet de savoir se qu'il faut précisément rendre comme monnaies a la personne
@@ -228,20 +221,25 @@ const monnaies: number[] = [
  * @returns resultat avec tous les billets/pieces present
  */
 function billets(somme: number): string {
+  const monnaies: number[] = [
+    500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01,
+  ];
   let resultat: string = `Somme totale : ${somme}€\n`;
   let sommeCourante: number = somme;
 
   //permet de verifier si on une piece/un billet chaque monnaies qui existe
-  monnaies.forEach((monnaies) => {
-    let nombreMonnaies: number = Math.floor(sommeCourante / monnaies);
-    sommeCourante = sommeCourante % monnaies;
+  monnaies.forEach((monnaie) => {
+    let nombreMonnaies: number = Math.floor(sommeCourante / monnaie);
+    sommeCourante = sommeCourante % monnaie;
     // on a des billets
-    if (monnaies >= 5 && nombreMonnaies > 0) {
-      resultat += `Billet de ${monnaies}€ : ${nombreMonnaies}\n`;
+    if (monnaie >= 5 && nombreMonnaies > 0) {
+      resultat += `Billet de ${monnaie}€ : ${nombreMonnaies}, et il reste ${sommeCourante}€\n`;
     }
     // on a des pieces
-    else if (monnaies < 5 && nombreMonnaies > 0) {
-      resultat += `Pièce de ${monnaies}€ : ${nombreMonnaies}\n`;
+    else if (monnaie < 5 && nombreMonnaies > 0) {
+      resultat += `Pièce de ${monnaie}€ : ${nombreMonnaies}, et il reste ${sommeCourante}€\n`;
+    } else if (sommeCourante !== 0) {
+      resultat += `Pièce de 0.01€ : 1, et il reste 0€\n`;
     }
   });
   return resultat;
@@ -305,40 +303,40 @@ function plusProcheDeZero(...temperatures: string[]): string {
 }
 console.log(plusProcheDeZero("15°C", "6°C", "24°C", "42°F"));
 
-// // exercice bonus
+// exercice bonus
 
-// /**
-//  * prends en parametre un tableau de nombre et le renvoi rangé en ordre croissant
-//  * @param nombres la liste de nombre à trier
-//  * @returns tableau de nombre rangé en ordre croissant
-//  */
-// function centraleDeTri(nombres: number[]): number[] {
-//   //on verifie la condition d'arret (plus qu'un seul element dans le tableau)
-//   if (nombres.length > 1) {
-//     //nombre pivot que l'on utilise pour partiellement trier le tableau
-//     const pivot: number = nombres[nombres.length];
-//     //tableau contenant les nombres plus petit que le pivot
-//     const plusPetitTab: number[] = [];
-//     //tableau contenant les nombres plus grand que le pivot
-//     const plusGrandTab: number[] = [];
+/**
+ * prends en parametre un tableau de nombre et le renvoi rangé en ordre croissant
+ * @param nombres la liste de nombre à trier
+ * @returns tableau de nombre rangé en ordre croissant
+ */
+function centraleDeTri(nombres: number[]): number[] {
+  //on verifie la condition d'arret (plus qu'un seul element dans le tableau)
+  if (nombres.length > 1) {
+    //nombre pivot que l'on utilise pour partiellement trier le tableau
+    const pivot: number = nombres[nombres.length - 1];
+    //tableau contenant les nombres plus petit que le pivot
+    const plusPetitTab: number[] = [];
+    //tableau contenant les nombres plus grand que le pivot
+    const plusGrandTab: number[] = [];
 
-//     //length - 1, car on ne tri pas le pivot
-//     for (let index = 0; index < nombres.length - 1; index++) {
-//       const element = nombres[index];
-//       if (element < pivot) {
-//         plusPetitTab.push(element);
-//       } else {
-//         plusGrandTab.push(element);
-//       }
-//     }
+    //length - 1, car on ne tri pas le pivot
+    for (let index = 0; index < nombres.length - 1; index++) {
+      const element = nombres[index];
+      if (element < pivot) {
+        plusPetitTab.push(element);
+      } else {
+        plusGrandTab.push(element);
+      }
+    }
 
-//     // appel récursif en concaténant les tableaux
-//     return centraleDeTri(plusPetitTab).concat(
-//       [pivot],
-//       centraleDeTri(plusGrandTab)
-//     );
-//   } else {
-//     return nombres;
-//   }
-// }
-// console.log(centraleDeTri([9, -3, 5, 2, 6, 8, -6, 1, 3]));
+    // appel récursif en concaténant les tableaux
+    return centraleDeTri(plusPetitTab).concat(
+      [pivot],
+      centraleDeTri(plusGrandTab)
+    );
+  } else {
+    return nombres;
+  }
+}
+console.log(centraleDeTri([9, -3, 5, 2, 6, 8, -6, 1, 3]));
