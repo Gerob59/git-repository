@@ -7,30 +7,42 @@
 // }
 
 class Humain {
-  #nom: string;
-  #prenom: string;
-  #dateNaissance: Date;
+  private _nom: string;
+  private _prenom: string;
+  private _dateNaissance: Date;
 
   constructor(nom: string, prenom: string, naissance: Date) {
-    this.#nom = nom;
-    this.#prenom = prenom;
-    this.#dateNaissance = naissance;
+    this.nom = nom;
+    this.prenom = prenom;
+    this.dateNaissance = naissance;
   }
 
-  getNom(): string {
-    return this.#nom;
+  get nom(): string {
+    return this._nom;
   }
 
-  getPrenom(): string {
-    return this.#prenom;
+  set nom(nouveauNom: string) {
+    this._nom = nouveauNom;
   }
 
-  getDateNaissance(): Date {
-    return this.#dateNaissance;
+  get prenom(): string {
+    return this._prenom;
   }
 
-  getAge(): number {
-    const dob = this.getDateNaissance().toString();
+  set prenom(nouveauPrenom: string) {
+    this._prenom = nouveauPrenom;
+  }
+
+  get dateNaissance(): Date {
+    return this._dateNaissance;
+  }
+
+  set dateNaissance(nouvelleDateNaissance: Date) {
+    this._dateNaissance = nouvelleDateNaissance;
+  }
+
+  get age(): number {
+    const dob = this.dateNaissance.toString();
     const year: number = Number(dob.substring(0, 4));
     const month: number = Number(dob.substring(4, 2)) - 1;
     const day: number = Number(dob.substring(6, 2));
@@ -46,17 +58,17 @@ class Humain {
   }
 }
 class Formateur extends Humain {
-  #societe!: string;
+  private _societe!: string;
   constructor(nom: string, prenom: string, naissance: Date) {
     super(nom, prenom, naissance);
   }
 
-  getSociete(): string {
-    return this.#societe;
+  get societe(): string {
+    return this._societe;
   }
 
-  setSociete(nouvelleSociete: string) {
-    this.#societe = nouvelleSociete;
+  set societe(nouvelleSociete: string) {
+    this._societe = nouvelleSociete;
   }
 }
 
@@ -65,8 +77,8 @@ const formateur1: Formateur = new Formateur(
   "Alexandre",
   new Date("1994-06-14")
 );
-formateur1.setSociete("Sémifir");
+formateur1.societe = "Sémifir";
 
 console.log(
-  `Aujourd'hui, ${formateur1.getPrenom()} ${formateur1.getNom()} est le formateur venant de la société ${formateur1.getSociete()}. Il a ${formateur1.getAge()}ans`
+  `Aujourd'hui, ${formateur1.prenom} ${formateur1.nom} est le formateur venant de la société ${formateur1.societe}. Il a ${formateur1.age}ans`
 );
