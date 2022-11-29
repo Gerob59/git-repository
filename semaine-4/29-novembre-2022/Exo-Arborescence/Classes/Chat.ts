@@ -5,16 +5,22 @@ export default class Chat extends Mammifere implements Terrestre {
   constructor(nom: string, poids: number, dateNaissance: Date) {
     super(nom, poids, dateNaissance);
   }
-
+  RespirerHorsDeLEau(): void {
+    this.respirer();
+  }
   marcher(): void {
-    throw new Error("Method not implemented.");
+    this.deplacer();
   }
 
-  miauler(): void {
-    throw new Error("Method not implemented.");
+  parler(): void {
+    console.log(`Le ${this.constructor.name} Miaule: "MIAOU !"`);
   }
 
-  respirerHorsDeLeau(): void {
-    throw new Error("Method not implemented.");
+  deplacer(): void {
+    console.log(`Le ${this.constructor.name} se déplace en marchant`);
+  }
+
+  respirer(): void {
+    console.log(`Le ${this.constructor.name} respire de l'air`);
   }
 }

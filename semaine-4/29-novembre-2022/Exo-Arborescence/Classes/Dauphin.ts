@@ -6,15 +6,33 @@ export default class Dauphin extends Mammifere implements Aquatique {
     super(nom, poids, dateNaissance);
   }
 
-  respirerSousEau(): void {
-    throw new Error("Method not implemented.");
+  respirerSousLeau(): void {
+    this.respirer();
   }
 
   nager(): void {
-    throw new Error("Method not implemented.");
+    this.deplacer();
   }
 
-  cliquetter(): void {
-    throw new Error("Method not implemented.");
+  parler(): void {
+    console.log(`Le ${this.constructor.name} Cliquette: "CLIC-CLIC !"`);
+  }
+
+  deplacer(): void {
+    console.log(`Le ${this.constructor.name} se déplace en nageant`);
+  }
+
+  respirer(): void {
+    console.log(
+      `Le ${this.constructor.name} retient sa respiration sous l'eau et respire à la surface`
+    );
+  }
+
+  retenirRespiration(): void {
+    console.log(
+      `Le ${this.constructor.name} commence à retenir sa respiration.`
+    );
+    //wait 10s
+    console.log(`Le ${this.constructor.name} est mort !`);
   }
 }

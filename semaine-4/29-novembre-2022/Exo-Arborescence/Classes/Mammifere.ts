@@ -11,13 +11,37 @@ export default abstract class Mammifere implements Animal {
     this._dateNaissance = dateNaissance;
   }
 
-  display(): void {
+  public display(): void {
     console.log(
-      `je suis un ${this.constructor.name}. Mon nom est ${this._nom}, je pèse ${this._poids}kg et je suis né le ${this.dateNaissance}`
+      `je suis un ${this.constructor.name}. Mon nom est ${this._nom}, je pèse ${
+        this._poids
+      }kg et je suis né le ${this.dateNaissance.toLocaleDateString()}`
     );
   }
 
-  private get dateNaissance(): string {
-    return this._dateNaissance.toLocaleDateString();
+  protected get nom(): string {
+    return this._nom;
   }
+
+  protected get poids(): number {
+    return this._poids;
+  }
+
+  protected get dateNaissance(): Date {
+    return this._dateNaissance;
+  }
+
+  protected set nom(nouveauNom: string) {
+    this._nom = nouveauNom;
+  }
+
+  protected set poids(nouveauPoids: number) {
+    this._poids = nouveauPoids;
+  }
+
+  protected set dateNaissance(nouvelleDate: Date) {
+    this._dateNaissance = nouvelleDate;
+  }
+
+  abstract parler(): void;
 }

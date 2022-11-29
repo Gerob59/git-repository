@@ -1,1 +1,4 @@
-export default interface MilieuNaturel {}
+export default interface MilieuNaturel {
+  deplacer(): void;
+  respirer(): void;
+}
