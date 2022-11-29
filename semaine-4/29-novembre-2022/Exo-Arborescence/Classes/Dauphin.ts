@@ -6,10 +6,6 @@ export default class Dauphin extends Mammifere implements Aquatique {
     super(nom, poids, dateNaissance);
   }
 
-  display(): void {
-    throw new Error("Method not implemented.");
-  }
-
   respirerSousEau(): void {
     throw new Error("Method not implemented.");
   }

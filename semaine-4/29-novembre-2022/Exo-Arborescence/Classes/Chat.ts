@@ -10,10 +10,6 @@ export default class Chat extends Mammifere implements Terrestre {
     throw new Error("Method not implemented.");
   }
 
-  display(): void {
-    throw new Error("Method not implemented.");
-  }
-
   miauler(): void {
     throw new Error("Method not implemented.");
   }

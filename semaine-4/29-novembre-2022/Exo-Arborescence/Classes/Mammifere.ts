@@ -1,9 +1,9 @@
 import Animal from "../Interfaces/Animal";
 
 export default abstract class Mammifere implements Animal {
-  _nom: string;
-  _poids: number;
-  _dateNaissance: Date;
+  protected _nom: string;
+  protected _poids: number;
+  protected _dateNaissance: Date;
 
   constructor(nom: string, poids: number, dateNaissance: Date) {
     this._nom = nom;
@@ -11,5 +11,13 @@ export default abstract class Mammifere implements Animal {
     this._dateNaissance = dateNaissance;
   }
 
-  abstract display(): void;
+  display(): void {
+    console.log(
+      `je suis un ${this.constructor.name}. Mon nom est ${this._nom}, je pèse ${this._poids}kg et je suis né le ${this.dateNaissance}`
+    );
+  }
+
+  private get dateNaissance(): string {
+    return this._dateNaissance.toLocaleDateString();
+  }
 }
