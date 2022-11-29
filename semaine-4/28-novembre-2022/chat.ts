@@ -42,35 +42,37 @@ abstract class Chat {
 
 class Europeen extends Chat {
   private _surnoms: string[];
-  private _origne: string = "Europeen";
+  private _origine: string = "Europeen";
 
-  constructor(nom: string, age: number, poid: number, surnoms: string[]) {
+  constructor(nom: string, age: number, poid: number, ...surnoms: string[]) {
     super(nom, age, poid);
     this._surnoms = surnoms;
   }
 
-  public get surnoms(): string {
-    return this._surnoms.join(" ");
+  public get surnoms(): string[] {
+    return this._surnoms;
   }
 
-  public get origne(): string {
-    return this._origne;
+  public get origine(): string {
+    return this._origine;
   }
 
-  public set surnoms(nouveauSurnom: string) {
-    this._surnoms.concat(nouveauSurnom);
+  public set surnoms(nouveauSurnoms: string[]) {
+    nouveauSurnoms.forEach((surnom) => {
+      this._surnoms.push(surnom);
+    });
   }
 
   public afficherChat(): string {
-    return `Son nom est ${this.nom}, il a ${this.age} ans, il pèse ${this.poid} kilos et c'est un chat ${this.origne}\nSes surnoms sont : ${this.surnoms}`;
+    return `Son nom est ${this.nom}, il a ${this.age} ans, il pèse ${
+      this.poid
+    } kilos et c'est un chat ${
+      this.origine
+    }.\nSes surnoms sont : ${this.surnoms.join(" ")}.`;
   }
 }
 
-const monChat: Europeen = new Europeen("Pikachu", 3, 4, [
-  "pika",
-  "chacha",
-  "picha",
-  "chachou",
-  "gros-chat",
-]);
+const monChat: Europeen = new Europeen("Pikachu", 3, 4, "pika", "chacha");
+monChat.surnoms = ["picha", "chachou", "gros-chat"];
+
 console.log(monChat.afficherChat());
