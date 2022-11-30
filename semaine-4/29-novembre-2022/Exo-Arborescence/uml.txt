@@ -1,0 +1,39 @@
+https://www.planttext.com/
+
+@startuml
+interface MilieuNaturel {
+respirer()
+deplacer()
+}
+interface Aquatique {
+ respirerSousEau()
+ nager()
+}
+interface Terrestre {
+ respirerHorDeLeau(): void
+ marcher(): void
+}
+interface Animal {
+ display(): void
+}
+abstract class Mammifere {
+
+_nom: str
+_poids: num
+_dateNaissance: Date
+parler()
+}
+class Chat {
+_couleurs: str[]
+}
+class Dauphin {
+ retenirRespiration()
+}
+MilieuNaturel <-- Aquatique
+MilieuNaturel <-- Terrestre
+Animal <-- Mammifere
+Terrestre <-- Chat
+Mammifere <- Chat
+Aquatique <-- Dauphin
+Mammifere <-- Dauphin
+@enduml
