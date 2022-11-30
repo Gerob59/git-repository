@@ -1,13 +1,13 @@
 import Animal from "../Interfaces/Animal";
 
 export default abstract class Mammifere implements Animal {
-  _nom: string;
-  _poids: number;
-  _dateNaissance: Date;
+  protected _nom!: string;
+  protected _poids!: number;
+  protected _dateNaissance!: Date;
   constructor(nom: string, poids: number, dateNaissance: Date) {
-    this._nom = nom;
-    this._poids = poids;
-    this._dateNaissance = dateNaissance;
+    this.nom = nom;
+    this.poids = poids;
+    this.dateNaissance = dateNaissance;
   }
 
   public display(): void {

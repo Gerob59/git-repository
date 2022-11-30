@@ -5,13 +5,18 @@ export default class Dauphin extends Mammifere implements Aquatique {
   constructor(nom: string, poids: number, dateNaissance: Date) {
     super(nom, poids, dateNaissance);
   }
-
+  retenirRespiration(): void {
+    console.log(
+      `Le ${this.constructor.name} commence à retenir sa respiration.`
+    );
+  }
   respirerSousLeau(): void {
+    this.retenirRespiration();
     this.respirer();
   }
 
   nager(): void {
-    this.deplacer();
+    console.log(`Le ${this.constructor.name} se déplace en 3D.`);
   }
 
   parler(): void {
@@ -19,20 +24,12 @@ export default class Dauphin extends Mammifere implements Aquatique {
   }
 
   deplacer(): void {
-    console.log(`Le ${this.constructor.name} se déplace en nageant`);
+    console.log(`Le ${this.constructor.name} se déplace en 2D.`);
   }
 
   respirer(): void {
     console.log(
-      `Le ${this.constructor.name} retient sa respiration sous l'eau et respire à la surface`
+      `Le ${this.constructor.name} retourne à la surface afin de pouvoir respirer.`
     );
-  }
-
-  retenirRespiration(): void {
-    console.log(
-      `Le ${this.constructor.name} commence à retenir sa respiration.`
-    );
-    //wait 10s
-    console.log(`Le ${this.constructor.name} est mort !`);
   }
 }
