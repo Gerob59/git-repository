@@ -1,6 +1,8 @@
 import Ev from "./Ev";
 import Iv from "./Iv";
 import Type from "./Type";
+import Attaque from "./Attaque";
+import Categorie from "./Categorie";
 
 export default abstract class Pokemon {
   _nom: string;
@@ -9,21 +11,23 @@ export default abstract class Pokemon {
   _evs: Ev;
   _ivs: Iv;
   _nature: Nature;
+  _attaques: Attaque[];
 
   constructor(
     nom: string,
     typePrincipale: Type,
-    typeSecondaire: Type,
-    evs: Ev,
-    ivs: Iv,
-    nature: Nature
+    typeSecondaire?: Type,
+    attaques?: Attaque[]
   ) {
     this._nom = nom;
     this._typePrincipale = typePrincipale;
-    this._typeSecondaire = typeSecondaire;
-    this._evs = evs;
-    this._ivs = ivs;
-    this._nature = nature;
+    this._typeSecondaire = typeSecondaire || typePrincipale;
+    this._evs = new Ev();
+    this._ivs = new Iv();
+    this._nature = Nature[Math.floor(Math.random() * this._nature.length)];
+    this._attaques = attaques || [
+      new Attaque("Charge", Type.NORMAL, Categorie.PHYSIQUE, 35, 35),
+    ];
   }
 
   get nom(): string {
