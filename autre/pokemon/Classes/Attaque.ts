@@ -27,4 +27,32 @@ export default class Attaque {
     this._precision = precision || 100;
     this._descriptionAttaque = descriptionAttaque || "";
   }
+
+  get nom(): string {
+    return this._nom;
+  }
+
+  get type(): Type {
+    return this._type;
+  }
+
+  get categorie(): Categorie {
+    return this._categorie;
+  }
+
+  get pp(): number {
+    return this._pp;
+  }
+
+  get puissance(): number {
+    return this._puissance;
+  }
+
+  get precision(): number {
+    return this._precision;
+  }
+
+  get descriptionAttaque(): string {
+    return this._descriptionAttaque;
+  }
 }
