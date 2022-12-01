@@ -1,6 +1,7 @@
 import Ev from "./Ev";
 import Iv from "./Iv";
-import Type from "./Type";
+import { Type } from "./Type";
+import { tableType } from "./Type";
 import Nature from "./Nature";
 import Attaque from "./Attaque";
 import Categorie from "./Categorie";
