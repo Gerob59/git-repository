@@ -1,3 +1,6 @@
+/**
+ * Liste de tous les types qui existe dans le jeu
+ */
 export enum Type {
   ACIER = "Acier",
   COMBAT = "Combat",
@@ -19,6 +22,12 @@ export enum Type {
   VOL = "Vol",
 }
 
+/**
+ * Permet de savoir le multiplicateur de degats d'une attaque sur un pokemon
+ * @param typePokemon le type du pokemon qui recoit l'attaque
+ * @param typeAttaqueRecu le type de l'attaque que le pokemon recoit
+ * @returns multiplicateur de degats selon les types
+ */
 export function tableType(typePokemon: Type, typeAttaqueRecu: Type): number {
   if (typePokemon === Type.ACIER) {
     if (

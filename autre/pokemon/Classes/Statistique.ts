@@ -1,4 +1,4 @@
-export default abstract class Statistiques {
+export default class Statistiques {
   protected _pv: number;
   protected _attaque: number;
   protected _defense: number;
