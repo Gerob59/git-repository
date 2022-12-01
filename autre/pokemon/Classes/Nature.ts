@@ -25,3 +25,4 @@ enum Nature {
   SOLO = "Solo",
   TIMIDE = "Timide",
 }
+export default Nature;
