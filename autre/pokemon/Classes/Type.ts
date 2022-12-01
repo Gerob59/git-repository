@@ -1,0 +1,21 @@
+enum Type {
+  ACIER = "Acier",
+  COMBAT = "Combat",
+  DRAGON = "Dragon",
+  EAU = "Eau",
+  ELECTRIQUE = "Electrique",
+  FEU = "Feu",
+  FEE = "Fee",
+  GLACE = "Glace",
+  INSECTE = "Insecte",
+  NORMAL = "Normal",
+  PLANTE = "Plante",
+  POISON = "Poison",
+  PSY = "Psy",
+  ROCHE = "Roche",
+  SOL = "Sol",
+  SPECTRE = "Spectre",
+  TENEBRES = "Tenebres",
+  VOL = "Vol",
+}
+export default Type;
