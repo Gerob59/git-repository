@@ -1,28 +1,8 @@
 import Attaque from "./Attaque";
+import Statistique from "./Statistique";
 
-export default class AttaqueStatus implements Attaque {
-  nom: string;
-  pp: number;
-  descriptionAttaque: string;
-  protected _effet: string;
-
-  constructor(
-    nomAttaque: string,
-    ppAttaque: number,
-    descriptionAttaque,
-    effetAttaque: string
-  ) {
-    this.nom = nomAttaque;
-    this.pp = ppAttaque;
-    this.descriptionAttaque = descriptionAttaque;
-    this._effet = effetAttaque;
-  }
-
-  public get effet() {
-    return this._effet;
-  }
-
-  lancerAttaque() {
+export default class AttaqueStatus extends Attaque {
+  public lancerAttaque(statistiquePokemon: Statistique): number {
     throw new Error("Method not implemented.");
   }
 }
