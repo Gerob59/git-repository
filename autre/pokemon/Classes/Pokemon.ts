@@ -1,17 +1,18 @@
 import Ev from "./Ev";
 import Iv from "./Iv";
-import { Type } from "./Type";
-import { tableType } from "./Type";
 import Nature from "./Nature";
 import Attaque from "./Attaque";
 import Statistiques from "./Statistique";
 import Objet from "./Objet";
 import AttaquePhysique from "./AttaquePhysique";
+import Type from "./Type";
 
 export default abstract class Pokemon {
   protected _nomPokemon: string;
+  protected _pvCourant: number;
   protected _typePrincipale: Type;
   protected _typeSecondaire: Type;
+  protected _finalStat: Statistiques;
   protected _statistique: Statistiques;
   protected _evs: Ev = new Ev();
   protected _ivs: Iv = new Iv();
