@@ -1,7 +1,7 @@
 import Attaque from "./Attaque";
-import Statistique from "./Statistique";
-import { Statut } from "./Status";
-import { Type } from "./Type";
+import Statistique from "../statistique/Statistique";
+import { Statut } from "../status/Status";
+import { Type } from "../type/Type";
 
 export default class AttaqueStatus extends Attaque {
   constructor(

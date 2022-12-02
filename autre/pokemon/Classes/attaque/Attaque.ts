@@ -1,7 +1,7 @@
 import Attaque from "./Attaque";
-import { Type } from "./Type";
-import Statistique from "./Statistique";
-import { Statut } from "./Status";
+import { Type } from "../type/Type";
+import Statistique from "../statistique/Statistique";
+import { Statut } from "../status/Status";
 
 export default abstract class AttaqueQuiInfligeDesDegats implements Attaque {
   protected _nomAttaque: string;
