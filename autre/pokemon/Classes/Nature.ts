@@ -1,6 +1,4 @@
-import Pokemon from "./Pokemon";
-
-export enum Nature {
+enum Nature {
   ASSURE = "Assuré",
   BIZARRE = "Bizarre",
   BRAVE = "Brave",
@@ -27,5 +25,4 @@ export enum Nature {
   SOLO = "Solo",
   TIMIDE = "Timide",
 }
-
-export function appliquerNature(pokemon: Pokemon) {}
+export default Nature;

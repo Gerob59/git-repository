@@ -28,7 +28,8 @@ export default class Objet {
    */
   public appliqueEffet(statistiquePokemon: Statistiques): Statistiques {
     // effet a refaire en générique cette fois
-    statistiquePokemon.attaque = statistiquePokemon.attaque * 1.1;
+    statistiquePokemon.attaquePhysique =
+      statistiquePokemon.attaquePhysique * 1.1;
     statistiquePokemon.attaqueSpeciale =
       statistiquePokemon.attaqueSpeciale * 0.9;
     return statistiquePokemon;

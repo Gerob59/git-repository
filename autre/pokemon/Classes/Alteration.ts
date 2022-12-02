@@ -1,7 +1,5 @@
-import Pokemon from "./Pokemon";
-
-export enum Alteration {
-  DEFAULT = "",
+enum Alteration {
+  DEFAULT = "Default",
   ATTRACTION = "Attraction",
   CONFUSION = "Confusion",
   MALEDICTION = "Malédiction",
@@ -32,5 +30,6 @@ export enum Alteration {
   A_TERRE = "A terre",
   CHANGEMENT_DE_TYPE = "Changement de type",
 }
+
+export default Alteration;
 // https://www.metamorph6iv.net/t31427-notion-strategique-les-statuts-et-alteration-d-etat
-export function appliquerAlteration(pokemon: Pokemon) {}

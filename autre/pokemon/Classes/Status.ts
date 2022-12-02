@@ -1,4 +1,4 @@
-export enum Statut {
+enum Statut {
   DEFAULT = "",
   BRULURE = "Brûlure",
   GEL = "Gel",
@@ -6,3 +6,4 @@ export enum Statut {
   EMPOISONNEMENT = "Empoisonnement",
   SOMMEIL = "Sommeil",
 }
+export default Statut;

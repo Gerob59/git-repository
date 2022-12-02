@@ -8,7 +8,7 @@ export default class AttaqueStatus extends Attaque {
     nomAttaque: string,
     typeAttaque: Type,
     ppAttaque: number,
-    descriptionAttaque: string,
+    descriptionAttaque?: string,
     infligeStatus?: Statut
   ) {
     super(
@@ -17,7 +17,7 @@ export default class AttaqueStatus extends Attaque {
       ppAttaque,
       0,
       100,
-      descriptionAttaque,
+      descriptionAttaque || "",
       infligeStatus || Statut.DEFAULT
     );
   }

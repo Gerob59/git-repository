@@ -65,4 +65,7 @@ export default abstract class Pokemon {
   get nature(): Nature {
     return this._nature;
   }
+
+  protected appliquerAlteration() {}
+  protected appliquerNature() {}
 }
