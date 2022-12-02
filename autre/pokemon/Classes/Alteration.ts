@@ -1,3 +1,5 @@
+import Pokemon from "./Pokemon";
+
 export enum Alteration {
   DEFAULT = "",
   ATTRACTION = "Attraction",
@@ -31,3 +33,4 @@ export enum Alteration {
   CHANGEMENT_DE_TYPE = "Changement de type",
 }
 // https://www.metamorph6iv.net/t31427-notion-strategique-les-statuts-et-alteration-d-etat
+export function appliquerAlteration(pokemon: Pokemon) {}

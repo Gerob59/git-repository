@@ -7,6 +7,7 @@ import Attaque from "./Attaque";
 import Categorie from "./Categorie";
 import Statistiques from "./Statistique";
 import Objet from "./Objet";
+import AttaquePhysique from "./AttaquePhysique";
 
 export default abstract class Pokemon {
   protected _nomPokemon!: string;
@@ -29,7 +30,7 @@ export default abstract class Pokemon {
     this._typePrincipale = typePrincipale;
     this._typeSecondaire = typeSecondaire || typePrincipale;
     this._attaques = attaques || [
-      new Attaque("Charge", Type.NORMAL, Categorie.PHYSIQUE, 35, 35),
+      new AttaquePhysique("Charge", Type.NORMAL, 30, 35, 100),
     ];
   }
 

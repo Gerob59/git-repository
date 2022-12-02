@@ -1,5 +1,6 @@
 import Attaque from "./Attaque";
 import Statistique from "./Statistique";
+import { Statut } from "./Status";
 import { Type } from "./Type";
 
 export default class AttaqueStatus extends Attaque {
@@ -7,9 +8,18 @@ export default class AttaqueStatus extends Attaque {
     nomAttaque: string,
     typeAttaque: Type,
     ppAttaque: number,
-    descriptionAttaque: string
+    descriptionAttaque: string,
+    infligeStatus?: Statut
   ) {
-    super(nomAttaque, typeAttaque, ppAttaque, 0, 100, descriptionAttaque);
+    super(
+      nomAttaque,
+      typeAttaque,
+      ppAttaque,
+      0,
+      100,
+      descriptionAttaque,
+      infligeStatus || Statut.DEFAULT
+    );
   }
 
   public lancerAttaque(statistiquePokemon: Statistique): number {
