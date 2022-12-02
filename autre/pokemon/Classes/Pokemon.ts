@@ -4,13 +4,12 @@ import { Type } from "./Type";
 import { tableType } from "./Type";
 import Nature from "./Nature";
 import Attaque from "./Attaque";
-import Categorie from "./Categorie";
 import Statistiques from "./Statistique";
 import Objet from "./Objet";
 import AttaquePhysique from "./AttaquePhysique";
 
 export default abstract class Pokemon {
-  protected _nomPokemon!: string;
+  protected _nomPokemon: string;
   protected _typePrincipale: Type;
   protected _typeSecondaire: Type;
   protected _statistique: Statistiques;
