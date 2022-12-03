@@ -2,11 +2,11 @@ import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
 import AlterationInformation from "./AlterationInformation";
 
-export default class Possessif extends EffetAbstrait {
+export default class Possesif extends EffetAbstrait {
   constructor() {
     super(
-      AlterationInformation.Possessif.nomAlteration,
-      AlterationInformation.Possessif.descriptionAlteration
+      AlterationInformation.Possesif.nomAlteration,
+      AlterationInformation.Possesif.descriptionAlteration
     );
   }
 
