@@ -1,25 +1,25 @@
-export default class Statut {
-  public static readonly BRULURE = new Statut(
+export default class StatutInformation {
+  public static readonly BRULURE = new StatutInformation(
     "Brûlure",
     "L'attaque brûle le pokemon adverse"
   );
 
-  public static readonly EMPOISONNEMENT = new Statut(
+  public static readonly EMPOISONNEMENT = new StatutInformation(
     "Empoisonnement",
     "Empoisonne le pokemon adverse"
   );
 
-  public static readonly GEL = new Statut(
+  public static readonly GEL = new StatutInformation(
     "Gel",
     "L'attaque gel le pokemon adverse"
   );
 
-  public static readonly PARALYSIE = new Statut(
+  public static readonly PARALYSIE = new StatutInformation(
     "Paralysie",
     "L'attaque paralyse le pokemon adverse"
   );
 
-  public static readonly SOMMEIL = new Statut(
+  public static readonly SOMMEIL = new StatutInformation(
     "Sommeil",
     "L'attaque endort le pokemon adverse"
   );

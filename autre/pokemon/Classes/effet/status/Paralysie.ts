@@ -1,10 +1,13 @@
 import EffetAbstrait from "../EffetAbstrait";
 import Pokemon from "../../Pokemon";
-import Statut from "./Statut";
+import StatutInformation from "./StatutInformation";
 
 export default class Paralysie extends EffetAbstrait {
   constructor() {
-    super(Statut.PARALYSIE.nomStatut, Statut.PARALYSIE.descriptionStatut);
+    super(
+      StatutInformation.PARALYSIE.nomStatut,
+      StatutInformation.PARALYSIE.descriptionStatut
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

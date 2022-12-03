@@ -1,9 +1,13 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
 export default class Embargo extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+  constructor() {
+    super(
+      AlterationInformation.Embargo.nomAlteration,
+      AlterationInformation.Embargo.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

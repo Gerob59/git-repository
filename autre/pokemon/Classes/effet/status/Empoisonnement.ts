@@ -1,12 +1,12 @@
 import EffetAbstrait from "../EffetAbstrait";
 import Pokemon from "../../Pokemon";
-import Statut from "./Statut";
+import StatutInformation from "./StatutInformation";
 
 export default class Empoisonnement extends EffetAbstrait {
   constructor() {
     super(
-      Statut.EMPOISONNEMENT.nomStatut,
-      Statut.EMPOISONNEMENT.descriptionStatut
+      StatutInformation.EMPOISONNEMENT.nomStatut,
+      StatutInformation.EMPOISONNEMENT.descriptionStatut
     );
   }
 

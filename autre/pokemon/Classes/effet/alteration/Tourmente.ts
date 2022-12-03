@@ -1,9 +1,13 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
 export default class Tourmente extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+  constructor() {
+    super(
+      AlterationInformation.Tourmente.nomAlteration,
+      AlterationInformation.Tourmente.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

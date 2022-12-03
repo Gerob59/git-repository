@@ -1,9 +1,13 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
 export default class Malediction extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+  constructor() {
+    super(
+      AlterationInformation.Malediction.nomAlteration,
+      AlterationInformation.Malediction.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

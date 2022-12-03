@@ -1,11 +1,13 @@
-import Ev from "./Ev";
-import Iv from "./Iv";
-import Nature from "./Nature";
-import Attaque from "./Attaque";
-import Statistiques from "./Statistique";
+import Ev from "./statistique/Ev";
+import Iv from "./statistique/Iv";
+import Nature from "./nature/Nature";
+import Attaque from "./attaque/Attaque";
+import Statistiques from "./statistique/Statistique";
 import Objet from "./Objet";
-import AttaquePhysique from "./AttaquePhysique";
-import Type from "./Type";
+import AttaquePhysique from "./attaque/AttaquePhysique";
+import TypeEnum from "./type/TypeEnum";
+import Type from "../Interfaces/Type";
+import Effet from "../Interfaces/Effet";
 
 export default abstract class Pokemon {
   protected _nomPokemon: string;
@@ -18,6 +20,7 @@ export default abstract class Pokemon {
   protected _ivs: Iv = new Iv();
   protected _nature: Nature = Nature[Math.floor(Math.random() * 26)]; //26 est le nombre de nature qu'il existe
   protected _attaques: Attaque[];
+  protected _effets: Effet[] = [];
   protected _objetTenu: Objet;
 
   constructor(
@@ -30,7 +33,7 @@ export default abstract class Pokemon {
     this._typePrincipale = typePrincipale;
     this._typeSecondaire = typeSecondaire || typePrincipale;
     this._attaques = attaques || [
-      new AttaquePhysique("Charge", Type.NORMAL, 30, 35, 100),
+      new AttaquePhysique("Charge", TypeEnum.NORMAL, 30, 35, 100),
     ];
   }
 
@@ -68,4 +71,5 @@ export default abstract class Pokemon {
 
   protected appliquerAlteration() {}
   protected appliquerNature() {}
+  protected appliquerEffets() {}
 }

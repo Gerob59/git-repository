@@ -1,9 +1,13 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
 export default class ChangementDeType extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+  constructor() {
+    super(
+      AlterationInformation.ChangementDeType.nomAlteration,
+      AlterationInformation.ChangementDeType.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

@@ -1,10 +1,13 @@
 import EffetAbstrait from "../EffetAbstrait";
 import Pokemon from "../../Pokemon";
-import Statut from "./Statut";
+import StatutInformation from "./StatutInformation";
 
 export default class Sommeil extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(Statut.SOMMEIL.nomStatut, Statut.SOMMEIL.descriptionStatut);
+  constructor() {
+    super(
+      StatutInformation.SOMMEIL.nomStatut,
+      StatutInformation.SOMMEIL.descriptionStatut
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

@@ -1,4 +1,4 @@
-import Statistiques from "./Statistique";
+import Statistiques from "./statistique/Statistique";
 
 export default class Objet {
   private _nom: string;

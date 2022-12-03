@@ -1,10 +1,13 @@
 import EffetAbstrait from "../EffetAbstrait";
 import Pokemon from "../../Pokemon";
-import Statut from "./Statut";
+import StatutInformation from "./StatutInformation";
 
 export default class Brulure extends EffetAbstrait {
   constructor() {
-    super(Statut.BRULURE.nomStatut, Statut.BRULURE.descriptionStatut);
+    super(
+      StatutInformation.BRULURE.nomStatut,
+      StatutInformation.BRULURE.descriptionStatut
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

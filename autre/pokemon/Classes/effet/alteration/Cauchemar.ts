@@ -1,13 +1,13 @@
-import Effet from "../../Interfaces/Effet";
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
+import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
-export default class Cauchemar implements Effet {
-  nomAlteration: string;
-  descriptionAlteration: string;
-
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    this.nomAlteration = nomAlteration;
-    this.descriptionAlteration = descriptionAlteration;
+export default class Cauchemar extends EffetAbstrait {
+  constructor() {
+    super(
+      AlterationInformation.Cauchemar.nomAlteration,
+      AlterationInformation.Cauchemar.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {

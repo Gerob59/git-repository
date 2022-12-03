@@ -1,9 +1,13 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import AlterationInformation from "./AlterationInformation";
 
 export default class VolMagnetik extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+  constructor() {
+    super(
+      AlterationInformation.VolMagnetik.nomAlteration,
+      AlterationInformation.VolMagnetik.descriptionAlteration
+    );
   }
 
   appliquerEffet(pokemon: Pokemon): void {
