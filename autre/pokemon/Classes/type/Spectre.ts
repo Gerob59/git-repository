@@ -1,5 +1,5 @@
 import Type from "../../Interfaces/Type";
-import TypeEnum from "../TypeEnum";
+import TypeEnum from "./TypeEnum";
 import TypeAbstrait from "./TypeAbstrait";
 
 export default class Spectre extends TypeAbstrait {

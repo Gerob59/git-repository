@@ -3,9 +3,9 @@ enum TypeEnum {
   COMBAT = "Combat",
   DRAGON = "Dragon",
   EAU = "Eau",
-  ELECTRIQUE = "Electrique",
+  ELECTRIQUE = "Éléctrique",
   FEU = "Feu",
-  FEE = "Fee",
+  FEE = "Fée",
   GLACE = "Glace",
   INSECTE = "Insecte",
   NORMAL = "Normal",
@@ -15,7 +15,7 @@ enum TypeEnum {
   ROCHE = "Roche",
   SOL = "Sol",
   SPECTRE = "Spectre",
-  TENEBRES = "Tenebres",
+  TENEBRES = "Ténèbres",
   VOL = "Vol",
 }
 export default TypeEnum;
