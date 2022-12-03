@@ -1,9 +1,10 @@
 import EffetAbstrait from "../EffetAbstrait";
-import Pokemon from "../Pokemon";
+import Pokemon from "../../Pokemon";
+import Statut from "./Statut";
 
-class Gel extends EffetAbstrait {
-  constructor(nomAlteration: string, descriptionAlteration: string) {
-    super(nomAlteration, descriptionAlteration);
+export default class Gel extends EffetAbstrait {
+  constructor() {
+    super(Statut.GEL.nomStatut, Statut.GEL.descriptionStatut);
   }
 
   appliquerEffet(pokemon: Pokemon): void {
