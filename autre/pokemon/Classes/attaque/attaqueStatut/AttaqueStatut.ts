@@ -1,9 +1,9 @@
-import Attaque from "./Attaque";
-import Statistique from "../statistique/Statistique";
-import Effet from "../../Interfaces/Effet";
-import Type from "../../Interfaces/Type";
+import Attaque from "../Attaque";
+import Statistique from "../../statistique/Statistique";
+import Effet from "../../../Interfaces/Effet";
+import Type from "../../../Interfaces/Type";
 
-export default class AttaqueStatus extends Attaque {
+export default class AttaqueStatut extends Attaque {
   constructor(
     nomAttaque: string,
     typeAttaque: Type,

@@ -2,21 +2,17 @@ import Pokemon from "../Pokemon";
 
 export default abstract class Objet {
   protected _nom: string;
-  protected _effet: number;
   protected _desription: string;
 
-  constructor(nom: string, effet: number, desription: string) {
+  constructor(nom: string, desription: string) {
     this._nom = nom;
-    this._effet = effet;
     this._desription = desription;
   }
 
   public get nom(): string {
     return this._nom;
   }
-  public get effet(): number {
-    return this._effet;
-  }
+
   public get desription(): string {
     return this._desription;
   }
