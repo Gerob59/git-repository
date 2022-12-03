@@ -1,7 +1,7 @@
-import Effet from "../../Interfaces/Effet";
-import Pokemon from "../Pokemon";
+import Effet from "../Interfaces/Effet";
+import Pokemon from "./Pokemon";
 
-export default class Cauchemar implements Effet {
+export default abstract class AbstractEffet implements Effet {
   nomAlteration: string;
   descriptionAlteration: string;
 
@@ -10,7 +10,5 @@ export default class Cauchemar implements Effet {
     this.descriptionAlteration = descriptionAlteration;
   }
 
-  appliquerEffet(pokemon: Pokemon): void {
-    throw new Error("Method not implemented.");
-  }
+  public abstract appliquerEffet(pokemon: Pokemon): void;
 }

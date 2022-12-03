@@ -1,7 +1,7 @@
-import Pokemon from "../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
+import Pokemon from "../Pokemon";
 
-export default class Malediction extends EffetAbstrait {
+class Sommeil extends EffetAbstrait {
   constructor(nomAlteration: string, descriptionAlteration: string) {
     super(nomAlteration, descriptionAlteration);
   }

@@ -1,7 +1,7 @@
 import Pokemon from "../Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
 
-export default class Malediction extends EffetAbstrait {
+export default class ATerre extends EffetAbstrait {
   constructor(nomAlteration: string, descriptionAlteration: string) {
     super(nomAlteration, descriptionAlteration);
   }
