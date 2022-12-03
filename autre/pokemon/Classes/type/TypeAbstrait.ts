@@ -1,4 +1,4 @@
-import Type from "../Interfaces/Type";
+import Type from "../../Interfaces/Type";
 
 export default abstract class TypeAbstrait implements Type {
   nomType: string;

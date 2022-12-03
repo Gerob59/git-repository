@@ -1,11 +1,29 @@
 import Type from "../../Interfaces/Type";
-import TypeAbstrait from "../TypeAbstrait";
+import TypeEnum from "../TypeEnum";
+import TypeAbstrait from "./TypeAbstrait";
 
 export default class Vol extends TypeAbstrait {
   constructor() {
-    super("Vol");
+    super(TypeEnum.VOL);
   }
+
   multiplicateurAttaque(typePokemonAdverse: Type): number {
-    throw new Error("Method not implemented.");
+    if (
+      typePokemonAdverse.nomType === TypeEnum.ROCHE ||
+      typePokemonAdverse.nomType === TypeEnum.ELECTRIQUE ||
+      typePokemonAdverse.nomType === TypeEnum.GLACE
+    ) {
+      return 2;
+    } else if (
+      typePokemonAdverse.nomType === TypeEnum.COMBAT ||
+      typePokemonAdverse.nomType === TypeEnum.INSECTE ||
+      typePokemonAdverse.nomType === TypeEnum.PLANTE
+    ) {
+      return 0.5;
+    } else if (typePokemonAdverse.nomType === TypeEnum.SOL) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 }

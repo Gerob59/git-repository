@@ -1,11 +1,24 @@
 import Type from "../../Interfaces/Type";
-import TypeAbstrait from "../TypeAbstrait";
+import TypeEnum from "../TypeEnum";
+import TypeAbstrait from "./TypeAbstrait";
 
 export default class Glace extends TypeAbstrait {
   constructor() {
-    super("Glace");
+    super(TypeEnum.GLACE);
   }
+
   multiplicateurAttaque(typePokemonAdverse: Type): number {
-    throw new Error("Method not implemented.");
+    if (
+      typePokemonAdverse.nomType === TypeEnum.COMBAT ||
+      typePokemonAdverse.nomType === TypeEnum.ROCHE ||
+      typePokemonAdverse.nomType === TypeEnum.ACIER ||
+      typePokemonAdverse.nomType === TypeEnum.FEU
+    ) {
+      return 2;
+    } else if (typePokemonAdverse.nomType === TypeEnum.GLACE) {
+      return 0.5;
+    } else {
+      return 1;
+    }
   }
 }

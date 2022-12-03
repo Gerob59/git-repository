@@ -1,11 +1,19 @@
 import Type from "../../Interfaces/Type";
-import TypeAbstrait from "../TypeAbstrait";
+import TypeEnum from "../TypeEnum";
+import TypeAbstrait from "./TypeAbstrait";
 
 export default class Normal extends TypeAbstrait {
   constructor() {
-    super("Normal");
+    super(TypeEnum.NORMAL);
   }
+
   multiplicateurAttaque(typePokemonAdverse: Type): number {
-    throw new Error("Method not implemented.");
+    if (typePokemonAdverse.nomType === TypeEnum.COMBAT) {
+      return 2;
+    } else if (typePokemonAdverse.nomType === TypeEnum.SPECTRE) {
+      return 0;
+    } else {
+      return 1;
+    }
   }
 }

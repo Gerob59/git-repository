@@ -1,11 +1,28 @@
 import Type from "../../Interfaces/Type";
-import TypeAbstrait from "../TypeAbstrait";
+import TypeEnum from "../TypeEnum";
+import TypeAbstrait from "./TypeAbstrait";
 
 export default class Poison extends TypeAbstrait {
   constructor() {
-    super("Poison");
+    super(TypeEnum.POISON);
   }
+
   multiplicateurAttaque(typePokemonAdverse: Type): number {
-    throw new Error("Method not implemented.");
+    if (
+      typePokemonAdverse.nomType === TypeEnum.SOL ||
+      typePokemonAdverse.nomType === TypeEnum.PSY
+    ) {
+      return 2;
+    } else if (
+      typePokemonAdverse.nomType === TypeEnum.COMBAT ||
+      typePokemonAdverse.nomType === TypeEnum.POISON ||
+      typePokemonAdverse.nomType === TypeEnum.INSECTE ||
+      typePokemonAdverse.nomType === TypeEnum.PLANTE ||
+      typePokemonAdverse.nomType === TypeEnum.FEE
+    ) {
+      return 0.5;
+    } else {
+      return 1;
+    }
   }
 }

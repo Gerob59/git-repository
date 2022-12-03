@@ -1,11 +1,30 @@
 import Type from "../../Interfaces/Type";
-import TypeAbstrait from "../TypeAbstrait";
+import TypeEnum from "../TypeEnum";
+import TypeAbstrait from "./TypeAbstrait";
 
 export default class Roche extends TypeAbstrait {
   constructor() {
-    super("Roche");
+    super(TypeEnum.ROCHE);
   }
+
   multiplicateurAttaque(typePokemonAdverse: Type): number {
-    throw new Error("Method not implemented.");
+    if (
+      typePokemonAdverse.nomType === TypeEnum.COMBAT ||
+      typePokemonAdverse.nomType === TypeEnum.SOL ||
+      typePokemonAdverse.nomType === TypeEnum.ACIER ||
+      typePokemonAdverse.nomType === TypeEnum.EAU ||
+      typePokemonAdverse.nomType === TypeEnum.PLANTE
+    ) {
+      return 2;
+    } else if (
+      typePokemonAdverse.nomType === TypeEnum.NORMAL ||
+      typePokemonAdverse.nomType === TypeEnum.VOL ||
+      typePokemonAdverse.nomType === TypeEnum.POISON ||
+      typePokemonAdverse.nomType === TypeEnum.FEU
+    ) {
+      return 0.5;
+    } else {
+      return 1;
+    }
   }
 }
