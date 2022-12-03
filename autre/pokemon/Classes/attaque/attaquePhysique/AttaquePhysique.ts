@@ -1,7 +1,7 @@
-import Attaque from "./Attaque";
-import Statistique from "../statistique/Statistique";
-import Effet from "../../Interfaces/Effet";
-import Type from "../../Interfaces/Type";
+import Attaque from "../Attaque";
+import Statistique from "../../statistique/Statistique";
+import Effet from "../../../Interfaces/Effet";
+import Type from "../../../Interfaces/Type";
 
 export default class AttaquePhysique extends Attaque {
   constructor(
