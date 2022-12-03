@@ -3,9 +3,7 @@ import Iv from "./statistique/Iv";
 import Nature from "./nature/Nature";
 import Attaque from "./attaque/Attaque";
 import Statistiques from "./statistique/Statistique";
-import Objet from "./Objet";
-import AttaquePhysique from "./attaque/AttaquePhysique";
-import TypeEnum from "./type/TypeEnum";
+import Objet from "./objet/Objet";
 import Type from "../Interfaces/Type";
 import Effet from "../Interfaces/Effet";
 
@@ -26,15 +24,13 @@ export default abstract class Pokemon {
   constructor(
     nomPokemon: string,
     typePrincipale: Type,
-    typeSecondaire?: Type,
-    attaques?: Attaque[]
+    typeSecondaire: Type,
+    attaques: Attaque[]
   ) {
     this.nomPokemon = nomPokemon;
     this._typePrincipale = typePrincipale;
     this._typeSecondaire = typeSecondaire || typePrincipale;
-    this._attaques = attaques || [
-      new AttaquePhysique("Charge", TypeEnum.NORMAL, 30, 35, 100),
-    ];
+    this._attaques = attaques;
   }
 
   get nomPokemon(): string {

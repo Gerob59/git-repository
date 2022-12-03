@@ -1,15 +1,15 @@
 import Attaque from "./Attaque";
 import Statistique from "../statistique/Statistique";
-import { Statut } from "../status/Status";
-import { Type } from "../type/Type";
+import Effet from "../../Interfaces/Effet";
+import Type from "../../Interfaces/Type";
 
 export default class AttaqueStatus extends Attaque {
   constructor(
     nomAttaque: string,
     typeAttaque: Type,
     ppAttaque: number,
-    descriptionAttaque?: string,
-    infligeStatus?: Statut
+    descriptionAttaque: string,
+    infligeStatus: Effet
   ) {
     super(
       nomAttaque,
@@ -17,8 +17,8 @@ export default class AttaqueStatus extends Attaque {
       ppAttaque,
       0,
       100,
-      descriptionAttaque || "",
-      infligeStatus || Statut.DEFAULT
+      descriptionAttaque,
+      infligeStatus
     );
   }
 

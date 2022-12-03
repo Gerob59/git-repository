@@ -1,7 +1,7 @@
 import Attaque from "./Attaque";
-import { Type } from "../type/Type";
+import Type from "../../Interfaces/Type";
 import Statistique from "../statistique/Statistique";
-import { Statut } from "../status/Status";
+import Effet from "../../Interfaces/Effet";
 
 export default abstract class AttaqueQuiInfligeDesDegats implements Attaque {
   protected _nomAttaque: string;
@@ -10,7 +10,7 @@ export default abstract class AttaqueQuiInfligeDesDegats implements Attaque {
   protected _puissanceAttaque: number;
   protected _precisionAttaque: number;
   protected _ppAttaque: number;
-  protected _infligeStatus: Statut;
+  protected _infligeStatus: Effet;
 
   constructor(
     nomAttaque: string,
@@ -19,7 +19,7 @@ export default abstract class AttaqueQuiInfligeDesDegats implements Attaque {
     puissanceAttaque: number,
     precisionAttaque: number,
     descriptionAttaque: string,
-    infligeStatus?: Statut
+    infligeStatus: Effet
   ) {
     this._nomAttaque = nomAttaque;
     this._typeAttaque = typeAttaque;
@@ -27,7 +27,7 @@ export default abstract class AttaqueQuiInfligeDesDegats implements Attaque {
     this._puissanceAttaque = puissanceAttaque;
     this._precisionAttaque = precisionAttaque;
     this._ppAttaque = ppAttaque;
-    this._infligeStatus = infligeStatus || Statut.DEFAULT;
+    this._infligeStatus = infligeStatus;
   }
 
   public abstract lancerAttaque(statistiquePokemon: Statistique): number;
