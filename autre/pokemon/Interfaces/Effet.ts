@@ -5,3 +5,4 @@ export default interface Effet {
   descriptionAlteration: string;
   appliquerEffet(pokemon: Pokemon): void;
 }
+// https://www.metamorph6iv.net/t31427-notion-strategique-les-statuts-et-alteration-d-etat
