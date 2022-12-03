@@ -1,11 +1,11 @@
-import Ev from "./statistique/Ev";
-import Iv from "./statistique/Iv";
-import Nature from "../Interfaces/Nature";
-import Attaque from "./attaque/Attaque";
-import Statistiques from "./statistique/Statistique";
-import Objet from "./objet/Objet";
-import Type from "../Interfaces/Type";
-import Effet from "../Interfaces/Effet";
+import Ev from "../statistique/Ev";
+import Iv from "../statistique/Iv";
+import Nature from "../../Interfaces/Nature";
+import Attaque from "../attaque/Attaque";
+import Statistiques from "../statistique/Statistique";
+import Objet from "../objet/Objet";
+import Type from "../../Interfaces/Type";
+import Effet from "../../Interfaces/Effet";
 
 export default abstract class Pokemon {
   protected _nomPokemon!: string;

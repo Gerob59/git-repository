@@ -1,5 +1,5 @@
 import Effet from "../../Interfaces/Effet";
-import Pokemon from "../Pokemon";
+import Pokemon from "../pokemon/Pokemon";
 
 export default abstract class AbstractEffet implements Effet {
   nomEffet: string;

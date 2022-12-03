@@ -1,4 +1,4 @@
-import Pokemon from "../Classes/Pokemon";
+import Pokemon from "../Classes/pokemon/Pokemon";
 
 export default interface Effet {
   nomEffet: string;
