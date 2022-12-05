@@ -1,5 +1,5 @@
 import EffetAbstrait from "../EffetAbstrait";
-import Pokemon from "../../Pokemon";
+import Pokemon from "../../pokemon/Pokemon";
 import StatutInformation from "./StatutInformation";
 
 export default class Paralysie extends EffetAbstrait {
