@@ -1,4 +1,5 @@
 enum TypeEnum {
+  AUCUN = "",
   ACIER = "Acier",
   COMBAT = "Combat",
   DRAGON = "Dragon",

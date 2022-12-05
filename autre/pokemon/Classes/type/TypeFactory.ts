@@ -18,6 +18,7 @@ import Sol from "./Sol";
 import Spectre from "./Spectre";
 import Tenebres from "./Tenebres";
 import Vol from "./Vol";
+import Aucun from "./Aucun";
 
 export default class TypeFactory {
   private _type: Type;
@@ -59,6 +60,8 @@ export default class TypeFactory {
       this._type = new Tenebres();
     } else if (typePokemon === TypeEnum.VOL) {
       this._type = new Vol();
+    } else if (typePokemon === TypeEnum.AUCUN) {
+      this._type = new Aucun();
     }
   }
 

@@ -6,6 +6,7 @@ import Statistiques from "../statistique/Statistique";
 import Objet from "../objet/Objet";
 import Type from "../../Interfaces/Type";
 import Effet from "../../Interfaces/Effet";
+import TypeEnum from "../type/TypeEnum";
 
 export default abstract class Pokemon {
   protected _nomPokemon!: string;
@@ -29,10 +30,15 @@ export default abstract class Pokemon {
     attaques: Attaque[]
   ) {
     this.nomPokemon = nomPokemon;
-    this._typePrincipale = typePrincipale;
-    this._typeSecondaire = typeSecondaire || typePrincipale;
+    if (typePrincipale.nomType !== TypeEnum.AUCUN) {
+      this._typePrincipale = typePrincipale;
+    } else {
+      throw new Error("le pokemon ne peux pas ne pas avoir de type");
+    }
+    this._typeSecondaire = typeSecondaire || TypeEnum.AUCUN;
     this._statistiqueInnee = statistiqueInnee;
     this._statsFinale = statistiqueInnee.setFinalStats(this.ivs, this._evs);
+    this._pvCourant = this._statsFinale.pv;
     this._attaques = attaques;
   }
 
