@@ -23,6 +23,7 @@ export default class AttaqueSpeciale extends AttaqueAbstrait {
       infligeStatus
     );
   }
+
   protected typeDegats(statistiquePokemon: Statistique): number {
     return this.puissanceAttaque * statistiquePokemon.attaqueSpeciale;
   }

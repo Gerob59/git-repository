@@ -36,7 +36,6 @@ export default abstract class AttaqueAbstrait implements Attaque {
     if (this.assezPP()) {
       if (this.reussisToucher()) {
         return this.typeDegats(statistiquePokemon);
-        //return this.puissanceAttaque * statistiquePokemon.attaqueSpeciale;
       } else {
         return 0;
       }
