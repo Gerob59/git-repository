@@ -21,51 +21,45 @@ import Vol from "./Vol";
 import Aucun from "./Aucun";
 
 export default class TypeFactory {
-  private _type: Type;
-
-  constructor(typePokemon: TypeEnum) {
+  public static createType(typePokemon: TypeEnum): Type {
     if (typePokemon === TypeEnum.ACIER) {
-      this._type = new Acier();
+      return new Acier();
     } else if (typePokemon === TypeEnum.COMBAT) {
-      this._type = new Combat();
+      return new Combat();
     } else if (typePokemon === TypeEnum.DRAGON) {
-      this._type = new Dragon();
+      return new Dragon();
     } else if (typePokemon === TypeEnum.EAU) {
-      this._type = new Eau();
+      return new Eau();
     } else if (typePokemon === TypeEnum.ELECTRIQUE) {
-      this._type = new Electrique();
+      return new Electrique();
     } else if (typePokemon === TypeEnum.FEE) {
-      this._type = new Fee();
+      return new Fee();
     } else if (typePokemon === TypeEnum.FEU) {
-      this._type = new Feu();
+      return new Feu();
     } else if (typePokemon === TypeEnum.GLACE) {
-      this._type = new Glace();
+      return new Glace();
     } else if (typePokemon === TypeEnum.INSECTE) {
-      this._type = new Insecte();
+      return new Insecte();
     } else if (typePokemon === TypeEnum.NORMAL) {
-      this._type = new Normal();
+      return new Normal();
     } else if (typePokemon === TypeEnum.PLANTE) {
-      this._type = new Plante();
+      return new Plante();
     } else if (typePokemon === TypeEnum.POISON) {
-      this._type = new Poison();
+      return new Poison();
     } else if (typePokemon === TypeEnum.PSY) {
-      this._type = new Psy();
+      return new Psy();
     } else if (typePokemon === TypeEnum.ROCHE) {
-      this._type = new Roche();
+      return new Roche();
     } else if (typePokemon === TypeEnum.SOL) {
-      this._type = new Sol();
+      return new Sol();
     } else if (typePokemon === TypeEnum.SPECTRE) {
-      this._type = new Spectre();
+      return new Spectre();
     } else if (typePokemon === TypeEnum.TENEBRES) {
-      this._type = new Tenebres();
+      return new Tenebres();
     } else if (typePokemon === TypeEnum.VOL) {
-      this._type = new Vol();
-    } else if (typePokemon === TypeEnum.AUCUN) {
-      this._type = new Aucun();
+      return new Vol();
+    } else {
+      return new Aucun();
     }
-  }
-
-  public get type(): Type {
-    return this._type;
   }
 }

@@ -7,11 +7,12 @@ import Objet from "../objet/Objet";
 import Type from "../../Interfaces/Type";
 import Effet from "../../Interfaces/Effet";
 import TypeEnum from "../type/TypeEnum";
+import NatureFactory from "../nature/NatureFactory";
 
 export default abstract class Pokemon {
   protected _nomPokemon!: string;
   protected _typePrincipale: Type;
-  protected _typeSecondaire: Type;
+  protected _typeSecondaire: Type | void;
   protected _statistiqueInnee: Statistiques;
   protected _attaques: Attaque[];
   protected _evs: Ev = new Ev();
@@ -19,7 +20,7 @@ export default abstract class Pokemon {
   protected _effets: Effet[] = [];
   protected _statsFinale: Statistiques;
   protected _pvCourant: number;
-  protected _nature: Nature;
+  protected _nature: Nature = NatureFactory.createNature();
   protected _objetTenu: Objet;
 
   constructor(
@@ -35,7 +36,7 @@ export default abstract class Pokemon {
     } else {
       throw new Error("le pokemon ne peux pas ne pas avoir de type");
     }
-    this._typeSecondaire = typeSecondaire || TypeEnum.AUCUN;
+    this._typeSecondaire = typeSecondaire;
     this._statistiqueInnee = statistiqueInnee;
     this._statsFinale = statistiqueInnee.setFinalStats(this.ivs, this._evs);
     this._pvCourant = this._statsFinale.pv;
@@ -57,11 +58,11 @@ export default abstract class Pokemon {
   get typePrincipale(): Type {
     return this._typePrincipale;
   }
-
+  /*
   get typeSecondaire(): Type {
     return this._typeSecondaire;
   }
-
+*/
   get evs(): Ev {
     return this._evs;
   }

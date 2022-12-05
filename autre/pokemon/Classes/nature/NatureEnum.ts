@@ -1,4 +1,4 @@
-enum Nature {
+enum NatureEnum {
   ASSURE = "Assuré",
   BIZARRE = "Bizarre",
   BRAVE = "Brave",
@@ -25,4 +25,4 @@ enum Nature {
   SOLO = "Solo",
   TIMIDE = "Timide",
 }
-export default Nature;
+export default NatureEnum;
