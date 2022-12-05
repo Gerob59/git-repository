@@ -1,9 +1,9 @@
-import Attaque from "../Attaque";
 import Statistique from "../../statistique/Statistique";
 import Effet from "../../../Interfaces/Effet";
 import Type from "../../../Interfaces/Type";
+import AttaqueAbstrait from "../AttaqueAbstrait";
 
-export default class AttaqueStatut extends Attaque {
+export default class AttaqueStatut extends AttaqueAbstrait {
   constructor(
     nomAttaque: string,
     typeAttaque: Type,
@@ -22,12 +22,7 @@ export default class AttaqueStatut extends Attaque {
     );
   }
 
-  public lancerAttaque(statistiquePokemon: Statistique): number {
-    if (this.assezPP()) {
-      return 0; // /!\ attention valeur a changer par la suite /!\
-    } else {
-      console.log("relancez une autre attaque");
-      return -1; //cas d'arret à gérer au moment d'appel de l'attaque
-    }
+  protected typeDegats(statistiquePokemon: Statistique): number {
+    return 0;
   }
 }
