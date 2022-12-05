@@ -16,8 +16,8 @@ export default abstract class Pokemon {
   protected _evs: Ev = new Ev();
   protected _ivs: Iv = new Iv();
   protected _effets: Effet[] = [];
-  protected _statsFinale: Statistiques = this.setFinalStats();
-  protected _pvCourant: number = this._statsFinale.pv;
+  protected _statsFinale: Statistiques;
+  protected _pvCourant: number;
   protected _nature: Nature;
   protected _objetTenu: Objet;
 
@@ -32,6 +32,7 @@ export default abstract class Pokemon {
     this._typePrincipale = typePrincipale;
     this._typeSecondaire = typeSecondaire || typePrincipale;
     this._statistiqueInnee = statistiqueInnee;
+    this._statsFinale = statistiqueInnee.setFinalStats(this.ivs, this._evs);
     this._attaques = attaques;
   }
 
@@ -72,38 +73,4 @@ export default abstract class Pokemon {
   }
 
   protected appliquerEffets() {}
-
-  /**
-   * Permet de setup les stats réel du pokemon en additonnant les stats de base du pokémon + ivs + evs
-   * @returns les stats réel du pokemon
-   */
-  private setFinalStats(): Statistiques {
-    //nos statistiques temporaire sont ceux du pokemon par défaut
-    const stats: Statistiques = this._statistiqueInnee;
-
-    // on additionne les pv
-    stats.pv += this._ivs.pv / 100 + this._evs.pv / 100;
-
-    // on additionne les attaquePhysiques
-    stats.attaquePhysique +=
-      this._ivs.attaquePhysique / 100 + this._evs.attaquePhysique / 100;
-
-    // on additionne les defensePhysiques
-    stats.defensePhysique +=
-      this._ivs.defensePhysique / 100 + this._evs.defensePhysique / 100;
-
-    // on additionne les attaqueSpeciales
-    stats.attaqueSpeciale +=
-      this._ivs.attaqueSpeciale / 100 + this._evs.attaqueSpeciale / 100;
-
-    // on additionne les defenseSpeciales
-    stats.defenseSpeciale +=
-      this._ivs.defenseSpeciale / 100 + this._evs.defenseSpeciale / 100;
-
-    // on additionne les vitesses
-    stats.vitesse += this._ivs.vitesse / 100 + this._evs.vitesse / 100;
-
-    //retourne toutes les stats actualisé
-    return stats;
-  }
 }

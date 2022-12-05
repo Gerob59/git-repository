@@ -1,6 +1,6 @@
-import Statistiques from "./Statistique";
+import StatistiqueAbstrait from "./StatistiqueAbstrait";
 
-export default class Iv extends Statistiques {
+export default class Iv extends StatistiqueAbstrait {
   constructor() {
     super(
       Math.floor(Math.random() * 32),

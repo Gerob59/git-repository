@@ -1,11 +1,8 @@
-export default class Statistiques {
-  protected _pv: number;
-  protected _attaquePhysique: number;
-  protected _defensePhysique: number;
-  protected _attaqueSpeciale: number;
-  protected _defenseSpeciale: number;
-  protected _vitesse: number;
+import Ev from "./Ev";
+import Iv from "./Iv";
+import StatistiqueAbstrait from "./StatistiqueAbstrait";
 
+export default class Statistique extends StatistiqueAbstrait {
   constructor(
     pv: number,
     attaquePhysique: number,
@@ -14,59 +11,54 @@ export default class Statistiques {
     defenseSpeciale: number,
     vitesse: number
   ) {
-    this._pv = pv;
-    this._attaquePhysique = attaquePhysique;
-    this._defensePhysique = defensePhysique;
-    this._attaqueSpeciale = attaqueSpeciale;
-    this._defenseSpeciale = defenseSpeciale;
-    this._vitesse = vitesse;
+    super(
+      pv,
+      attaquePhysique,
+      defensePhysique,
+      attaqueSpeciale,
+      defenseSpeciale,
+      vitesse
+    );
   }
 
-  public get pv(): number {
-    return this._pv;
-  }
+  /**
+   * Permet de setup les stats réel du pokemon en additonnant les stats de base du pokémon + ivs + evs
+   * @returns les stats réel du pokemon
+   */
+  setFinalStats(iv: Iv, ev: Ev): Statistique {
+    //nos statistiques temporaire sont ceux du pokemon par défaut
+    const stats: Statistique = new Statistique(
+      this.pv,
+      this.attaquePhysique,
+      this.defensePhysique,
+      this.attaqueSpeciale,
+      this.defenseSpeciale,
+      this.vitesse
+    );
 
-  public get attaquePhysique(): number {
-    return this._attaquePhysique;
-  }
+    // on additionne les pv
+    stats.pv += iv.pv / 100 + ev.pv / 100;
 
-  public get defensePhysique(): number {
-    return this._defensePhysique;
-  }
+    // on additionne les attaquePhysiques
+    stats.attaquePhysique +=
+      iv.attaquePhysique / 100 + ev.attaquePhysique / 100;
 
-  public get attaqueSpeciale(): number {
-    return this._attaqueSpeciale;
-  }
+    // on additionne les defensePhysiques
+    stats.defensePhysique +=
+      iv.defensePhysique / 100 + ev.defensePhysique / 100;
 
-  public get defenseSpeciale(): number {
-    return this._defenseSpeciale;
-  }
+    // on additionne les attaqueSpeciales
+    stats.attaqueSpeciale +=
+      iv.attaqueSpeciale / 100 + ev.attaqueSpeciale / 100;
 
-  public get vitesse(): number {
-    return this._vitesse;
-  }
+    // on additionne les defenseSpeciales
+    stats.defenseSpeciale +=
+      iv.defenseSpeciale / 100 + ev.defenseSpeciale / 100;
 
-  public set pv(nouveauPV: number) {
-    this._pv = nouveauPV;
-  }
+    // on additionne les vitesses
+    stats.vitesse += iv.vitesse / 100 + ev.vitesse / 100;
 
-  public set attaquePhysique(nouvelleAttaquePhysique) {
-    this._attaquePhysique = nouvelleAttaquePhysique;
-  }
-
-  public set defensePhysique(nouvelleDefensePhysique: number) {
-    this._defensePhysique = nouvelleDefensePhysique;
-  }
-
-  public set attaqueSpeciale(nouvelleAttaqueSpeciale: number) {
-    this._attaqueSpeciale = nouvelleAttaqueSpeciale;
-  }
-
-  public set defenseSpeciale(nouvelleDefenseSpeciale: number) {
-    this._defenseSpeciale = nouvelleDefenseSpeciale;
-  }
-
-  public set vitesse(nouvelleVitesse: number) {
-    this._vitesse = nouvelleVitesse;
+    //retourne toutes les stats actualisé
+    return stats;
   }
 }
