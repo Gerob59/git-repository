@@ -1,4 +1,4 @@
-import Pokemon from "../../Pokemon";
+import Pokemon from "../../pokemon/Pokemon";
 import EffetAbstrait from "../EffetAbstrait";
 import AlterationInformation from "./AlterationInformation";
 

@@ -10,5 +10,9 @@ export default abstract class AbstractEffet implements Effet {
     this.descriptionEffet = descriptionEffet;
   }
 
+  /**
+   * Redéfinis dans une sous-classe afin d'avoir une multitude d'effets différents.
+   * @param pokemon Le pokémon adverse qui recevra l'effet.
+   */
   public abstract appliquerEffet(pokemon: Pokemon): void;
 }
