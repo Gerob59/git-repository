@@ -24,6 +24,11 @@ export default class AttaqueSpeciale extends AttaqueAbstrait {
     );
   }
 
+  /**
+   * On redéfinis que l'attaque utilisé est l'attaque spéciale.
+   * @param statistiquePokemon Les statistiques du pokémon afin de calculer le montant de dégâts.
+   * @returns Le montant de dégâts de l'attaque avant calcul de la défense adverse.
+   */
   protected typeDegats(statistiquePokemon: Statistique): number {
     return this.puissanceAttaque * statistiquePokemon.attaqueSpeciale;
   }

@@ -30,8 +30,18 @@ export default abstract class AttaqueAbstrait implements Attaque {
     this.infligeStatus = infligeStatus;
   }
 
+  /**
+   * Redéfinis dans une sous-classe afin de savoir si on utilise l'attaque spéciale ou l'attaque physique.
+   * @param statistiquePokemon les statistiques du pokémon afin de calculer le montant de dégâts.
+   */
   protected abstract typeDegats(statistiquePokemon: Statistique): number;
 
+  /**
+   * Lance l'attaque du pokémon en fonction de la puissance de l'attaque et des statistiques du pokémon.
+   * Redéfinis les dégâts avec une sous fonction : typeDegats(statistiquePokemon).
+   * @param statistiquePokemon Les statistiques du pokémon afin de calculer le montant de dégâts.
+   * @returns Le montant de dégâts de l'attaque avant calcul de la défense adverse.
+   */
   public lancerAttaque(statistiquePokemon: Statistique): number {
     if (this.assezPP()) {
       if (this.reussisToucher()) {
@@ -45,6 +55,10 @@ export default abstract class AttaqueAbstrait implements Attaque {
     }
   }
 
+  /**
+   * Le pokémon essaye de toucher l'adversaire avec son attaque grâce à la précision de son attaque.
+   * @returns TRUE, si l'attaque est réussis / FALSE, sinon.
+   */
   protected reussisToucher(): boolean {
     let rate: number = Math.random() * this.precisionAttaque;
     if (rate > this.precisionAttaque) {
@@ -54,6 +68,10 @@ export default abstract class AttaqueAbstrait implements Attaque {
     }
   }
 
+  /**
+   * Vérifie si l'attaque à assez de PP pour lancer l'attaque.
+   * @returns TRUE, si assez de PP / FALSE, Sinon.
+   */
   protected assezPP(): boolean {
     if (this.ppAttaque > 0) {
       this.ppAttaque--;
