@@ -58,11 +58,11 @@ export default abstract class Pokemon {
   get typePrincipale(): Type {
     return this._typePrincipale;
   }
-  /*
-  get typeSecondaire(): Type {
+
+  get typeSecondaire(): Type | void {
     return this._typeSecondaire;
   }
-*/
+
   get evs(): Ev {
     return this._evs;
   }
