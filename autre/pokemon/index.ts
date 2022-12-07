@@ -2,7 +2,6 @@ import Paralysie from "./Classes/effet/status/Paralysie";
 import Attaque from "./Interfaces/Attaque";
 import TypeEnum from "./Classes/type/TypeEnum";
 import AttaquePhysique from "./Classes/attaque/attaquePhysique/AttaquePhysique";
-
 import AttaqueSpeciale from "./Classes/attaque/attaqueSpeciale/AttaqueSpeciale";
 import TypeFactory from "./Classes/type/TypeFactory";
 import Pokemon from "./Classes/pokemon/Pokemon";
@@ -20,16 +19,10 @@ const charge: Attaque = new AttaquePhysique(
   "attaque banal",
   para
 );
-/*
-console.log(
-  `nom:${attaque.nomAttaque}, pp:${attaque.ppAttaque}, précision:${attaque.precisionAttaque}, type:${attaque.typeAttaque.nomType}, puissance:${attaque.puissanceAttaque}, description:${attaque.descriptionAttaque}, statut:[ nom:${attaque.infligeStatus.nomEffet}, description:${attaque.infligeStatus.descriptionEffet}]`
-);
-*/
 
-const statsPikachu: Statistique = new Statistique(35, 55, 40, 50, 50, 90);
 const pkm: Pokemon = new Pokemon(
   "Pikachu",
-  statsPikachu,
+  new Statistique(35, 55, 40, 50, 50, 90),
   [
     new AttaqueSpeciale(
       "éclair",
@@ -40,15 +33,7 @@ const pkm: Pokemon = new Pokemon(
       "lance éclair",
       para
     ),
-    new AttaquePhysique(
-      "charge",
-      TypeFactory.createType(TypeEnum.NORMAL),
-      30,
-      35,
-      100,
-      "attaque banal",
-      para
-    ),
+    charge,
   ],
   TypeFactory.createType(TypeEnum.ELECTRIQUE),
   undefined

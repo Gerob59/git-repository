@@ -59,7 +59,7 @@ export default abstract class AttaqueAbstrait implements Attaque {
    * Le pokémon essaye de toucher l'adversaire avec son attaque grâce à la précision de son attaque.
    * @returns TRUE, si l'attaque est réussis / FALSE, sinon.
    */
-  protected reussisToucher(): boolean {
+  private reussisToucher(): boolean {
     let rate: number = Math.random() * this.precisionAttaque;
     if (rate > this.precisionAttaque) {
       return false;
@@ -72,7 +72,7 @@ export default abstract class AttaqueAbstrait implements Attaque {
    * Vérifie si l'attaque à assez de PP pour lancer l'attaque.
    * @returns TRUE, si assez de PP / FALSE, Sinon.
    */
-  protected assezPP(): boolean {
+  private assezPP(): boolean {
     if (this.ppAttaque > 0) {
       this.ppAttaque--;
       return true;

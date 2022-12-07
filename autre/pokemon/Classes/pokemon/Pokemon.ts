@@ -1,12 +1,11 @@
 import Ev from "../statistique/Ev";
 import Iv from "../statistique/Iv";
 import Nature from "../../Interfaces/Nature";
-import Attaque from "../attaque/AttaqueAbstrait";
+import Attaque from "../../Interfaces/Attaque";
 import Statistiques from "../statistique/Statistique";
 import Objet from "../objet/Objet";
 import Type from "../../Interfaces/Type";
 import Effet from "../../Interfaces/Effet";
-import TypeEnum from "../type/TypeEnum";
 import NatureFactory from "../nature/NatureFactory";
 
 export default class Pokemon {
