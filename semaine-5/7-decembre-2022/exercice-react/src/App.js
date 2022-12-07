@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom";
 import HomePage from "./page/HomePage";
 import EmployePage from "./page/EmployePage";
+import { Link } from "react-router-dom";
 
 export default function App() {
   return (
     <>
       <ul>
-        <Link to="/">Acceuil</Link>
+        <Link to={"/Home"}>Home</Link>
+        <Link to={"/Employe"}>Employe</Link>
       </ul>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<EmployePage />} />
+        <Route path="/Home" element={<HomePage />} />
+        <Route path="/Employe" element={<EmployePage />} />
       </Routes>
     </>
   );
