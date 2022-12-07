@@ -9,7 +9,7 @@ import Effet from "../../Interfaces/Effet";
 import TypeEnum from "../type/TypeEnum";
 import NatureFactory from "../nature/NatureFactory";
 
-export default abstract class Pokemon {
+export default class Pokemon {
   protected _nomPokemon!: string;
   protected _typePrincipale: Type;
   protected _typeSecondaire: Type | void;
@@ -21,7 +21,7 @@ export default abstract class Pokemon {
   protected _statsFinale: Statistiques;
   protected _pvCourant: number;
   protected _nature: Nature = NatureFactory.createNature();
-  protected _objetTenu: Objet;
+  protected _objetTenu: Objet | void = undefined;
 
   constructor(
     nomPokemon: string,
@@ -71,8 +71,20 @@ export default abstract class Pokemon {
     return this._ivs;
   }
 
+  get statistiqueInnee(): Statistiques {
+    return this._statistiqueInnee;
+  }
+
+  get statsFinale(): Statistiques {
+    return this._statsFinale;
+  }
+
   get nature(): Nature {
     return this._nature;
+  }
+
+  get attaques(): Attaque[] {
+    return this._attaques;
   }
 
   protected appliquerNature() {

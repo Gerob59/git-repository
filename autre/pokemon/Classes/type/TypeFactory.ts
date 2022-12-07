@@ -18,7 +18,6 @@ import Sol from "./Sol";
 import Spectre from "./Spectre";
 import Tenebres from "./Tenebres";
 import Vol from "./Vol";
-import Aucun from "./Aucun";
 
 export default class TypeFactory {
   public static createType(typePokemon: TypeEnum): Type {
@@ -40,8 +39,6 @@ export default class TypeFactory {
       return new Glace();
     } else if (typePokemon === TypeEnum.INSECTE) {
       return new Insecte();
-    } else if (typePokemon === TypeEnum.NORMAL) {
-      return new Normal();
     } else if (typePokemon === TypeEnum.PLANTE) {
       return new Plante();
     } else if (typePokemon === TypeEnum.POISON) {
@@ -59,7 +56,7 @@ export default class TypeFactory {
     } else if (typePokemon === TypeEnum.VOL) {
       return new Vol();
     } else {
-      return new Aucun();
+      return new Normal();
     }
   }
 }
