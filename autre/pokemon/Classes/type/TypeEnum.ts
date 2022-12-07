@@ -1,3 +1,6 @@
+/**
+ * La liste de tous les types possibles pour les pokémon et les attaques
+ */
 enum TypeEnum {
   ACIER = "Acier",
   COMBAT = "Combat",

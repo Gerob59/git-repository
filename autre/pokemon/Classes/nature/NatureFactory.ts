@@ -26,6 +26,10 @@ import Solo from "./Solo";
 import Timide from "./Timide";
 
 export default class NatureFactory {
+  /**
+   * Factory sur la nature des pokémon qui créé aléatoirement une nature parmis toutes les natures
+   * @returns la nature créée pour le pokémon
+   */
   public static createNature(): Nature {
     let aleatoire: number = Math.floor(Math.random() * 25); // il existe 25 natures différentes
     if (aleatoire === 0) {

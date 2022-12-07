@@ -1,4 +1,4 @@
-import Pokemon from "../Pokemon";
+import Pokemon from "../pokemon/Pokemon";
 
 export default abstract class Objet {
   protected _nom: string;

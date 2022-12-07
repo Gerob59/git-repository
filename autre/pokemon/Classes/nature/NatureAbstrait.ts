@@ -8,5 +8,9 @@ export default abstract class NatureAbstrait implements Nature {
     this._nomNature = nomNature;
   }
 
+  /**
+   * Redéfinis dans les sous-classes pour avoir l'effet de la nature à appliquer au pokémon
+   * @param statistiquePokemon Les stats du pokémon à modifier
+   */
   abstract appliquerNature(statistiquePokemon: Statistique): void;
 }

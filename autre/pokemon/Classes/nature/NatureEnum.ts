@@ -1,3 +1,6 @@
+/**
+ * Liste de toutes les natures disponibles pour les pokémon
+ */
 enum NatureEnum {
   ASSURE = "Assuré",
   BIZARRE = "Bizarre",

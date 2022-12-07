@@ -20,6 +20,11 @@ import Tenebres from "./Tenebres";
 import Vol from "./Vol";
 
 export default class TypeFactory {
+  /**
+   * Utilise l'enumeration de type afin de ne pouvoir que créer des types possibles pour les pokémon / attaques
+   * @param typePokemon Le type que l'on désire en uilisant l'enum de type
+   * @returns Créer le nouveau type demandé
+   */
   public static createType(typePokemon: TypeEnum): Type {
     if (typePokemon === TypeEnum.ACIER) {
       return new Acier();
