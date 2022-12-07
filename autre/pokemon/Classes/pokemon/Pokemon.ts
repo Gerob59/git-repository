@@ -12,7 +12,7 @@ import NatureFactory from "../nature/NatureFactory";
 export default class Pokemon {
   protected _nomPokemon!: string;
   protected _typePrincipale: Type;
-  protected _typeSecondaire: Type | void;
+  protected _typeSecondaire: Type | undefined;
   protected _statistiqueInnee: Statistiques;
   protected _attaques: Attaque[];
   protected _evs: Ev = new Ev();
@@ -21,22 +21,18 @@ export default class Pokemon {
   protected _statsFinale: Statistiques;
   protected _pvCourant: number;
   protected _nature: Nature = NatureFactory.createNature();
-  protected _objetTenu: Objet | void = undefined;
+  protected _objetTenu: Objet | undefined;
 
   constructor(
     nomPokemon: string,
-    typePrincipale: Type,
-    typeSecondaire: Type,
     statistiqueInnee: Statistiques,
-    attaques: Attaque[]
+    attaques: Attaque[],
+    typePrincipale: Type,
+    typeSecondaire?: Type
   ) {
     this.nomPokemon = nomPokemon;
-    if (typePrincipale.nomType !== TypeEnum.AUCUN) {
-      this._typePrincipale = typePrincipale;
-    } else {
-      throw new Error("le pokemon ne peux pas ne pas avoir de type");
-    }
-    this._typeSecondaire = typeSecondaire;
+    this._typePrincipale = typePrincipale;
+    this._typeSecondaire = typeSecondaire || undefined;
     this._statistiqueInnee = statistiqueInnee;
     this._statsFinale = statistiqueInnee.setFinalStats(this.ivs, this._evs);
     this._pvCourant = this._statsFinale.pv;
@@ -59,8 +55,8 @@ export default class Pokemon {
     return this._typePrincipale;
   }
 
-  get typeSecondaire(): Type | void {
-    return this._typeSecondaire;
+  get typeSecondaire(): Type | undefined {
+    return this._typeSecondaire || undefined;
   }
 
   get evs(): Ev {
