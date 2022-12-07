@@ -1,7 +1,7 @@
 import "./reset.css";
 import "./app.css";
 import Contact from "./Components/contact/Contact";
-import Count from "./Components/Count";
+import Count from "./Components/count/Count";
 import personnes from "./Data";
 
 export default function App() {
