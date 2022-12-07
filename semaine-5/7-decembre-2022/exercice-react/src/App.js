@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
-import Home from "./page/Home";
+import HomePage from "./page/HomePage";
+import EmployePage from "./page/EmployePage";
 
 export default function App() {
   return (
@@ -9,7 +10,8 @@ export default function App() {
         <Link to="/">Acceuil</Link>
       </ul>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<EmployePage />} />
       </Routes>
     </>
   );
