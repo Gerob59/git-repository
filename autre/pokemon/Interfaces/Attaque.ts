@@ -9,7 +9,7 @@ export default interface Attaque {
   puissanceAttaque: number;
   precisionAttaque: number;
   ppAttaque: number;
-  infligeStatus: Effet;
+  infligeStatus: Effet | undefined;
 
   lancerAttaque(statistiquePokemon: Statistiques): number;
 }

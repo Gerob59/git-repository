@@ -10,7 +10,7 @@ export default abstract class AttaqueAbstrait implements Attaque {
   puissanceAttaque: number;
   precisionAttaque: number;
   ppAttaque: number;
-  infligeStatus: Effet;
+  infligeStatus: Effet | undefined;
 
   constructor(
     nomAttaque: string,
@@ -19,7 +19,7 @@ export default abstract class AttaqueAbstrait implements Attaque {
     puissanceAttaque: number,
     precisionAttaque: number,
     descriptionAttaque: string,
-    infligeStatus: Effet
+    infligeStatus?: Effet
   ) {
     this.nomAttaque = nomAttaque;
     this.typeAttaque = typeAttaque;
@@ -27,7 +27,7 @@ export default abstract class AttaqueAbstrait implements Attaque {
     this.puissanceAttaque = puissanceAttaque;
     this.precisionAttaque = precisionAttaque;
     this.ppAttaque = ppAttaque;
-    this.infligeStatus = infligeStatus;
+    this.infligeStatus = infligeStatus || undefined;
   }
 
   /**
