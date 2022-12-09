@@ -1,20 +1,9 @@
-import EmployeList from "../components/employe/EmployeList";
-import EmployeData from "../../data";
-import EmployeDetail from "../components/employe/EmployeDetail";
+import EmployeDetailList from "../components/employe/EmployeDetailList";
 
-export default function EmployePage({ office, mobile, sms, email, index }) {
+export default function EmployePage() {
   return (
-    <div className="details">
-      <EmployeList />
-      {EmployeData.map((personne, index) => (
-        <EmployeDetail key={index} {...personne} />
-      ))}
-    </div>
+    <>
+      <EmployeDetailList />
+    </>
   );
 }
-/*
-office={personne.office}
-mobile={personne.mobile}
-sms={personne.sms}
-email={personne.email}
-          */
