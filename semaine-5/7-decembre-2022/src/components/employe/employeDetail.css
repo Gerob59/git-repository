@@ -1,0 +1,12 @@
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.details p:first-child {
+  border-top: solid 2px lightgray;
+}
+.details p {
+  border: solid 2px lightgray;
+  border-top: none;
+}

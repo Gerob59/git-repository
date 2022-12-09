@@ -1,19 +1,12 @@
-import { Route, Routes } from "react-router";
-import HomePage from "./page/HomePage";
-import EmployePage from "./page/EmployePage";
-import { Link } from "react-router-dom";
+import EmployeList from "./components/employe/EmployeList";
+import EmployeDetailList from "./components/employe/EmployeDetailList";
+import "./app.css";
 
 export default function App() {
   return (
-    <>
-      <ul>
-        <Link to={"/Home"}>Home</Link>
-        <Link to={"/Employe"}>Employe</Link>
-      </ul>
-      <Routes>
-        <Route path="/Home" element={<HomePage />} />
-        <Route path="/Employe" element={<EmployePage />} />
-      </Routes>
-    </>
+    <div className="App">
+      <EmployeList />
+      <EmployeDetailList />
+    </div>
   );
 }
