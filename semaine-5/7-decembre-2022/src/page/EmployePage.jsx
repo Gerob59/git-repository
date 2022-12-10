@@ -4,7 +4,7 @@ import Header from "../components/header/Header";
 export default function EmployePage() {
   return (
     <>
-      <Header text="Employe" />
+      <Header text="Employee" />
       <EmployeDetailList />
     </>
   );

@@ -2,3 +2,12 @@
   display: flex;
   flex-direction: row;
 }
+.HomePage, .EmployePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePageHeader, .EmployePageHeader {
+  display: flex;
+  flex-direction: column;
+}
