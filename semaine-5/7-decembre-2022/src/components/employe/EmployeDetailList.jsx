@@ -2,7 +2,7 @@ import EmployeData from "../../data";
 import Employe from "./Employe";
 import EmployeDetail from "./EmployeDetail";
 
-export default function EmployeDetailList() {
+export default function EmployeDetailList({ clicked, click }) {
   return (
     <div className="EmployeDetail">
       {EmployeData.map((personne, index) => (
@@ -14,3 +14,20 @@ export default function EmployeDetailList() {
     </div>
   );
 }
+/*
+{clicked ? (
+  <EmployeDetail
+    key={index}
+    {...personne}
+    etat={clicked}
+    onClick={click}
+  />
+) : (
+  ""
+)}
+{clicked ? (
+   <Employe key={index} {...personne} etat={clicked} onClick={click} />
+) : (
+  ""
+ )}
+*/

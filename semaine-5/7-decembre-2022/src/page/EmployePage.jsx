@@ -1,11 +1,11 @@
 import EmployeDetailList from "../components/employe/EmployeDetailList";
 import Header from "../components/header/Header";
 
-export default function EmployePage() {
+export default function EmployePage({ clicked, click }) {
   return (
     <>
       <Header text="Employee" />
-      <EmployeDetailList />
+      <EmployeDetailList etat={clicked} onClick={click} />
     </>
   );
 }

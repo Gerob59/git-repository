@@ -5,7 +5,7 @@ export default function Searchbar() {
       type="text"
       className="Searchbar"
       onkeyup=""
-      placeholder="Search for names.."
+      placeholder="Search for names..."
     ></input>
   );
 }

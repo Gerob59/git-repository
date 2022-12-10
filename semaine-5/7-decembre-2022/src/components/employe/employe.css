@@ -20,3 +20,7 @@ h4 {
   color: gray;
   font-size: 18px;
 }
+
+button {
+  max-height: 22px;
+}
