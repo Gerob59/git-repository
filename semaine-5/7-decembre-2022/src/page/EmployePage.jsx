@@ -5,6 +5,7 @@ export default function EmployePage({ clicked, click }) {
   return (
     <>
       <Header text="Employee" />
+
       <EmployeDetailList etat={clicked} onClick={click} />
     </>
   );

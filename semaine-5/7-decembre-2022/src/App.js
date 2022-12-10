@@ -9,10 +9,12 @@ export default function App() {
   const click = () => onClick(!clicked);
   return (
     <div className="App">
+
       <div className="HomePage" etat={clicked} onClick={click}>
         <HomePage />
       </div>
       <div className="EmployePage" etat={clicked} onClick={click}>
+
         <EmployePage />
       </div>
     </div>
