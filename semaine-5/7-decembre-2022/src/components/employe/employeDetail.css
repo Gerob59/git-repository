@@ -1,12 +1,20 @@
-.details {
+.Details {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.details p:first-child {
+.Details p:first-child {
   border-top: solid 2px lightgray;
 }
-.details p {
+.Details p {
   border: solid 2px lightgray;
   border-top: none;
+  padding: 2px;
+}
+.Information {
+  color: gray;
+  font-size: 15px;
+}
+.Categorie {
+  font-size: 20px;
 }

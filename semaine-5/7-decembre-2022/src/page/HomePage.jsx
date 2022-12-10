@@ -4,7 +4,7 @@ import Searchbar from "../components/searchbar/Searchbar";
 export default function HomePage() {
   return (
     <>
-      <Header text="Employe Directory" />
+      <Header text="Employee Directory" />
       <Searchbar />
       <EmployeList />
     </>

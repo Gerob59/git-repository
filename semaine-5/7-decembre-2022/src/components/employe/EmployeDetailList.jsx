@@ -4,7 +4,7 @@ import EmployeDetail from "./EmployeDetail";
 
 export default function EmployeDetailList() {
   return (
-    <div className="details-Employe">
+    <div className="EmployeDetail">
       {EmployeData.map((personne, index) => (
         <>
           <Employe key={index} {...personne} />
