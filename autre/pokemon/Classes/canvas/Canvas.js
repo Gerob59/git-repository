@@ -7,8 +7,8 @@ const drawImage = (url) => {
   const pkm = new Image();
   pkm.src = url;
   pkm.onload = () => {
-    ctx.drawImage(pkm, droite, bas, 100, 100);
-    droite += 100;
+    ctx.drawImage(pkm, droite, bas, 75, 75);
+    droite += 75;
   };
 };
 
