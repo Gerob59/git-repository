@@ -15,27 +15,31 @@ La qualité de l'expérience globale vécu par l'utilisateur lors de l'utilisati
 
 ## bad UX
 
-### voulue
+### voulu
 
-le cookie qui prend la moitié de la page.
-modification des cookies 1/8eme de la page
-changement du logo de cookies quand coche/décoche des domaine
+- le cookie qui prend la moitié de la page.
+- modification des cookies 1/8eme de la page
+- changement du logo de cookies quand coche/décoche des domaine
 
-Footer pour demander de s'inscrire ( on ne peut pas l'enlever)
-parcourir du navbar qui est pas assez gros alors qu'il est très important
-options de tri dans les chaines suivies
-cadeau prime connecté/déconnecté
+- Footer pour demander de s'inscrire ( on ne peut pas l'enlever)
+- parcourir du navbar qui est pas assez gros alors qu'il est très important
+- options de tri dans les chaines suivies
+- cadeau prime connecté/déconnecté
 
-### vrai pb
+### pb
 
-toutes les pages de ... à coté de parcourir
-site blanc de base
-barre blanche quand site site dark mode
-site chargé
+- toutes les pages de ... à coté de parcourir
+- site blanc de base
+- barre blanche quand site site dark mode
+- site chargé
 
 ## good UX
 
-Carrousel
-liste de recommendations
-navbar
-body > centre bien placé
+- Carrousel
+- liste de recommendations
+- navbar
+- body > centre bien placé
+
+#
+
+design thinking
