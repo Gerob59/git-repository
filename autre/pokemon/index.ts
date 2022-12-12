@@ -6,7 +6,6 @@ import AttaqueSpeciale from "./Classes/attaque/attaqueSpeciale/AttaqueSpeciale";
 import TypeFactory from "./Classes/type/TypeFactory";
 import Pokemon from "./Classes/pokemon/Pokemon";
 import Statistique from "./Classes/statistique/Statistique";
-import Effet from "./Interfaces/Effet";
 
 const charge: Attaque = new AttaquePhysique(
   "charge",
