@@ -5,12 +5,12 @@ body {
 
 header,
 footer {
-  background: rgba(124, 124, 226, 0.566);
+  background: #009624;
   height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ff5131;
 }
 
 main {
@@ -18,13 +18,13 @@ main {
 }
 
 nav {
-  background: green;
+  background: brown;
   height: 65vh;
   width: 20vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: grey;
 }
 
 .section {
@@ -52,16 +52,18 @@ article {
 }
 
 aside {
-  background: aquamarine;
+  background: #7a643b;
   width: 25%;
   height: 100%;
+  color: #c9c92a;
 }
 
 .div {
-  background: grey;
+  background: #ffcccb;
   height: 80%;
   width: 95%;
   margin: auto;
+  color: #efdcd5;
 }
 
 .div2 {
@@ -76,7 +78,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: yellowgreen;
+  background: red;
+  color: gold;
   width: 70%;
   margin: auto;
 }
