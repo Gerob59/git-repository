@@ -30,10 +30,10 @@ Ce sont les design patterns
 
 # Refactoring
 
-- Renommage
-- Commentaire et identation
-- Extraction de code
-- Généricité
+1. Renommage
+2. Commentaire et identation
+3. Extraction de code
+4. Généricité
 
 # DRY
 
@@ -48,47 +48,47 @@ Ce sont les design patterns
 - **S** : simple
 - **S** : stupid
 
-# architecture
+# Architecture
 
 Avoir plusieurs couches
 
-exemple : MVC
+Exemple avec le MVC
 
 - **M** : package Model (back)
 - **V** : package View (front)
 - **C** : package Controller (lien logique entre les 2)
 
-# spike
+# Spike
 
 Devant un problème insoluble et que l'on étudie
 
-- étude documentaire
-- développement de prototype
-- étude comparative
+- Etude documentaire
+- Développement de prototype
+- Etude comparative
 
-# cross-cuting concern
+# Cross-cuting concern
 
-- logs
-- data transfert
-- monitoring
-- authentificator / autorisation
-- caches
-- error / exception
-- securité
-- scalabilité
+1. logs
+2. data transfert
+3. monitoring
+4. authentificator / autorisation
+5. caches
+6. error / exception
+7. securité
+8. scalabilité
 
 # Coverage
 
-les outils ralentissent l'application
+Les outils ralentissent l'application
 
 - sonar : java
 - jest : javascript
 
-un bon coverage ne prouve pas un bon code
+Un bon coverage ne prouve pas un bon code
 
 # Mesures
 
-## cohesion
+## Cohésion
 
 Cohésion le plus fort possible
 
@@ -155,7 +155,7 @@ Ils permettent d'avoir :
 - robustesse
 - non-régression
 
-## doublure de tests
+## Doublure de tests
 
 Objet abstrait afin de permettre d'utiliser des méthodes avec une classe qui n'existe pas encore.
 
@@ -163,7 +163,7 @@ Objet abstrait afin de permettre d'utiliser des méthodes avec une classe qui n'
 - fake
 - mock
 
-## tests d'intégrations (tests métiers)
+## Tests d'intégrations (tests métiers)
 
 Tests automatisables après les **TU** (tests unitaires)
 
@@ -172,7 +172,7 @@ Vérifie les échanges entre les modules
 - sur des modules avec des **TU**
 - validation des interfaces des composants
 
-## tests de validations
+## Tests de validations
 
 arrive après les tests d'intégrations
 
@@ -180,7 +180,7 @@ arrive après les tests d'intégrations
 - Validation solution
 - Validation performance et robustesse
 
-## tests d'acceptations (tests qualification)
+## Tests d'acceptations (tests qualification)
 
 vérifier si conforme aux besoins de l'utilisateurs
 
@@ -201,3 +201,92 @@ tests de stress
 tests exploratoires
 
 - docs insuffisante, on test à la main
+
+# TDD
+
+- **T** : Test
+- **D** : Driven
+- **D** : Developpement
+
+## Cycle du tdd :
+
+- écrire le test
+- compilation + exécution
+- écrire le test au vert pour qu'il passe au vert
+- vérifier qu'il est bien vert
+- réfactoring
+
+## Bénéfices :
+
+- Facilite la création de code «propre».
+- Améliore la qualité du code / réduit le nombre de bugs.
+- Design émergent et robuste.
+- Accélère le processus de développement.
+- Harnais de tests automatisés dès le début
+
+# BDD
+
+principes du TDD avec les users stories
+
+- **B** : Behaviour
+- **D** : Driven
+- **D** : Development
+
+Les stories sont utilisées comme base pour développer les tests
+
+bon comportement, et non pas du bon design
+
+# ATDD
+
+- **A** : Acceptance
+- **T** : Test
+- **D** : Driven
+- **D** : Developement
+
+Orienté sur l’adéquation entre les fonctionnalités et les critères d’acceptance
+
+# Intégration continue
+
+Principes et d’outils facilitant la phase d’intégration.
+
+Vérifier que le résultat des modifications de code source ne produit pas de régression
+
+- Version livrable et stable disponible en continu
+
+Lancement des tests et builds à chaque modification ou ajout de code
+
+Automatisation de tâches:
+
+- compilation
+- tests
+- validation produit
+
+L’équipe doit alors décider comment travailler efficacement sur ces sujets :
+
+- stocker les versions successives des sources
+- gérer les différences entre les sources et faciliter la gestion des sources
+- gérer les différentes branches
+- gérer les bug
+- définir les bases de références
+- garantir qu’une version peut être reconstruite...
+
+# DevOps
+
+3 axes :
+
+- fluidité
+- collecte et traitement de feedback
+- diffusion culture, expérimentation et l'apprentissage continu
+
+# regles
+
+Même s'il y a plusieurs équipes
+
+```txt
+1 produit
+|-> 1 PO
+|-> 1 produit backlog
+|-> 1 definition of done
+```
+
+Début des sprints des équipes et fin des équipes en même temps

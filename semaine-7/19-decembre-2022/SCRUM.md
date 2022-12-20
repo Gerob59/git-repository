@@ -197,9 +197,3 @@ Pour le PO
 Pour le product owner
 
 Permet de savoir l'avancement du projet et combien de temps il reste
-
-# ?
-
-1 produit = 1 PO = 1 definition of done
-
-5 Equipes différentes --> tous la même définitions of done
