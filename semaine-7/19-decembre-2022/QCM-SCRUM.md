@@ -162,6 +162,20 @@
 
 - Immediately after the conclusion of the previous Sprint.
 
+40. Scrum Team consists of the following:
+
+- Developers
+- Scrum Master
+- Product Owner
+
+41. What is the function or purpose of Management in Scrum?
+
+- Support the Product Owner with insights and information into high value product and system capabilities. Support the Scrum Master to encourage organizational change that fosters empiricism, self-management, bottom-up intelligence, and intelligent product delivery.
+
+42. The timebox for the Sprint Planning event is?
+
+- 8 hours for a monthly Sprint. For shorter Sprints it is usually shorter.
+
 # Scrum developer open
 
 1. When is a system's architecture decided?
