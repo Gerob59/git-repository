@@ -4,13 +4,19 @@
 
 # II : Passer la certification
 
-[certification](scrum.org)
+[Certification](scrum.org)
 
-[cours](https://www.mylearning-system.com/)
+[Cours](https://www.mylearning-system.com/)
 
-[manifeste](https://agilemanifesto.org/iso/en/manifesto.html)
+[Manifeste](https://agilemanifesto.org/iso/en/manifesto.html)
 
-[scrum guides](https://scrumguides.org/scrum-guide.html)
+[Scrum guide](https://scrumguides.org/scrum-guide.html)
+
+Consigne 1 : lisez le scrum guide
+
+Consigne 2 : [scrum open](https://www.scrum.org/open-assessments/scrum-open)
+
+Consigne 3 : [Scrum developer open](https://www.scrum.org/open-assessments/scrum-developer-open)
 
 # III : Mots-clés
 
@@ -109,7 +115,7 @@ Il n'y a que le PO qui peut annuler un sprint uniquement si le goal est obselèt
 - Iteration = Agile
 - Agile =/= Sprint
 
-## 2. sprint planning
+## 2. **sprint planning**
 
 Participant : l'équipe scrum (parfois des experts)
 
@@ -123,7 +129,7 @@ Sprint backlog :
 - Sélection des items
 - Plan
 
-### plan du sprint planning
+### a. plan du sprint planning
 
 - WHY : définir le goal
 
@@ -131,7 +137,7 @@ Sprint backlog :
 
 - HOW : comment cela va être fait
 
-## 3. Sprint review
+## 3. **Sprint review**
 
 participant : l'équipe scrum (+ parties prenantes)
 
@@ -139,7 +145,7 @@ durée : 4h max pour 1h
 
 Résultat : input pour maj product backlog
 
-## 4. Sprint rétrospectif
+## 4. **Sprint rétrospectif**
 
 participant : l'équipe scrum
 
@@ -148,7 +154,7 @@ durée 3 heures pour 1 mois
 résultat : actions d'améliorations (facultative)
 (mettre à jour la définition of done)
 
-## Artéfacts
+## 5. **Artéfacts**
 
 Product backlog --> Product Goal
 
@@ -166,7 +172,7 @@ Velocité = somme des points
 
 planning poker, afin de noter la difficulté des taches.
 
-**User story = AGILE =/= SCRUM**
+User story = AGILE =/= SCRUM
 
 - En tant que <rôle>
 - Je Veux <besoin>
@@ -174,25 +180,25 @@ planning poker, afin de noter la difficulté des taches.
 
 # IX : Chart
 
-## burn-down chart
+## 1. **burn-down chart**
 
 Ce qu'il reste à faire et environ combien de temps il faut pour le faire
 
-### sprint
+### a. Sprint
 
 Pour les developers
 
-### release
+### b. Release
 
 Pour le PO
 
-## burn-up chart
+## 2. **burn-up chart**
 
 Pour le product owner
 
 Permet de savoir l'avancement du projet et combien de temps il reste
 
-#
+# ?
 
 1 produit = 1 PO = 1 definition of done
 
