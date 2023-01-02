@@ -1,28 +1,17 @@
-import Express, { Request, Response } from "express";
-import TodoModel from "./model/todo.model";
+import Express from "express";
+import TodoRouter from "./router/todo.router";
+
+// utilisation d'uen variable d'environnement
+import "dotenv/config";
+const port = process.env.PORT;
 
 // instance de Express
 const app = Express();
-// instance du routeur de Express
-const router = Express.Router();
 
-// route via router
-router.get("/test", (req: Request, res: Response) => {
-  res.send("page de test");
-});
-// appel fu router
-app.use(router);
+// instance du router de express ayant pour route par defaut todo
+app.use("/todo", TodoRouter);
 
-// route par defaut
-app.get("/", (req: Request, res: Response) => {
-  const model: TodoModel = new TodoModel("task 1");
-  console.log(
-    `id : ${model.id}, task : ${model.task}, completed : ${model.completed}`
-  );
-  res.send("c'est tout bon");
-});
-
-// définition du port d'écoute
-app.listen("3000", () => {
-  console.log(`server lancé sur le port 3000`);
+// définition du port d'écoute du server
+app.listen(port, () => {
+  console.log(`server lancé sur le port ${port}`);
 });
