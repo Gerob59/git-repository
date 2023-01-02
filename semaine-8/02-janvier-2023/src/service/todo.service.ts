@@ -11,4 +11,12 @@ export default class TodoService {
   public getAll = (): TodoModel[] => {
     return this.repo.getAll();
   };
+
+  public getById(id: number): TodoModel {
+    const result: TodoModel | undefined = this.repo
+      .getAll()
+      .find((todo) => todo.id === id);
+    if (!result) throw "Todo not found";
+    return result;
+  }
 }
