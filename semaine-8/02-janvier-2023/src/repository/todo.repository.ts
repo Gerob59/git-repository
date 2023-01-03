@@ -15,7 +15,7 @@ export default class TodoRepository {
     return this._todos;
   };
 
-  public delete = (index: number): void => {
-    this._todos.splice(index, 1);
+  public deleteById = (id: number): void => {
+    this._todos = this._todos.filter((todo) => todo.id !== id);
   };
 }
