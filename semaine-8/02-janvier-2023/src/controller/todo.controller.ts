@@ -32,4 +32,10 @@ export default class TodoController {
     const todo: TodoModel = this.service.createTodo(task);
     res.send(todo);
   };
+
+  public put = (req: Request, res: Response): void => {
+    const id: number = Number(req.params.id);
+    const todo: TodoModel = req.body;
+    res.send(this.service.put(id, todo));
+  };
 }

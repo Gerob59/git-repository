@@ -35,4 +35,17 @@ export default class TodoService {
       return todo;
     }
   };
+
+  public put = (id: number, todo: TodoModel): TodoModel => {
+    let todoAModifier: TodoModel | undefined = this.repo
+      .getAll()
+      .find((item) => item.id === id);
+    if (!todoAModifier) {
+      todoAModifier = this.createTodo(todo.task);
+    } else {
+      todoAModifier.task = todo.task;
+      todoAModifier.completed = todo.completed;
+    }
+    return todoAModifier;
+  };
 }
