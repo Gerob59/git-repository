@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import TodoModel from "../model/todo.model";
 import TodoService from "../service/todo.service";
 
 /**
@@ -27,7 +28,7 @@ export default class TodoController {
   };
 
   public createTodo = (req: Request, res: Response): void => {
-    const name: string = req.params.todoName;
-    res.send(this.service.createTodo(name));
+    const todo: TodoModel = req.body;
+    res.send(this.service.createTodo(todo));
   };
 }

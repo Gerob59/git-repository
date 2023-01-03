@@ -1,4 +1,4 @@
-import Express from "express";
+import express from "express";
 import TodoRouter from "./router/todo.router";
 
 // utilisation d'uen variable d'environnement
@@ -6,7 +6,8 @@ import "dotenv/config";
 const port = process.env.PORT;
 
 // instance de Express
-const app = Express();
+const app = express();
+app.use(express.json());
 
 // instance du router de express ayant pour route par defaut todo
 app.use("/todo", TodoRouter);

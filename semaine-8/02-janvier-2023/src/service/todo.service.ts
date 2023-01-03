@@ -26,7 +26,8 @@ export default class TodoService {
   public deleteById(id: number): void {
     this.repo.deleteById(id);
   }
-  public createTodo = (name: string): TodoModel => {
-    return this.repo.createTodo(name);
+
+  public createTodo = (todo: TodoModel): TodoModel => {
+    return this.repo.createTodo(todo);
   };
 }

@@ -19,9 +19,9 @@ export default class TodoRepository {
     this._todos = this._todos.filter((todo) => todo.id !== id);
   };
 
-  public createTodo = (name: string): TodoModel => {
-    const todo = new TodoModel(name);
-    this._todos.push(todo);
-    return todo;
+  public createTodo = (todo: TodoModel): TodoModel => {
+    const nouveau = new TodoModel(todo.task);
+    this._todos.push(nouveau);
+    return nouveau;
   };
 }
