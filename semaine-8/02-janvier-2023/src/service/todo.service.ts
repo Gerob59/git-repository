@@ -27,7 +27,12 @@ export default class TodoService {
     this.repo.deleteById(id);
   }
 
-  public createTodo = (todo: TodoModel): TodoModel => {
-    return this.repo.createTodo(todo);
+  public createTodo = (task: string): TodoModel => {
+    if (!task) throw "Task not found";
+    else {
+      const todo: TodoModel = new TodoModel(task);
+      this.repo.createTodo(todo);
+      return todo;
+    }
   };
 }

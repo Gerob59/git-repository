@@ -27,8 +27,9 @@ export default class TodoController {
     res.send(this.service.deleteById(id));
   };
 
-  public createTodo = (req: Request, res: Response): void => {
-    const todo: TodoModel = req.body;
-    res.send(this.service.createTodo(todo));
+  public create = (req: Request, res: Response): void => {
+    const task: string = req.body.task;
+    const todo: TodoModel = this.service.createTodo(task);
+    res.send(todo);
   };
 }

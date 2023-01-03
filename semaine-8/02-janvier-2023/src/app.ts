@@ -7,6 +7,11 @@ const port = process.env.PORT;
 
 // instance de Express
 const app = express();
+
+// lire un formulaire
+// app.use(express.encodeddata());
+
+// permet de lir le json
 app.use(express.json());
 
 // instance du router de express ayant pour route par defaut todo

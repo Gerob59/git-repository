@@ -11,6 +11,6 @@ const router = Express.Router();
 router.get("/", controller.getAll);
 router.get("/:id", controller.getById);
 router.delete("/:id", controller.deleteById);
-router.post("/", controller.createTodo);
+router.post("/", controller.create);
 
 export default router;
