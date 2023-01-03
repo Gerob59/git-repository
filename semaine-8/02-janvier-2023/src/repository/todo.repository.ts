@@ -18,4 +18,10 @@ export default class TodoRepository {
   public deleteById = (id: number): void => {
     this._todos = this._todos.filter((todo) => todo.id !== id);
   };
+
+  public createTodo = (name: string): TodoModel => {
+    const todo = new TodoModel(name);
+    this._todos.push(todo);
+    return todo;
+  };
 }

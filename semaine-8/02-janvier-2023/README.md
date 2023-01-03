@@ -18,6 +18,12 @@ permet de vérifier l'api en communiquant avec le controller (test logique)
 
 **Delete** : supprimer
 
+# type
+
+Monolythique: MVC
+
+orienté service : pour les api
+
 # Config
 
 nmp init :

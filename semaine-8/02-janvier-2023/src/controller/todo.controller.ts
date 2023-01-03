@@ -25,4 +25,9 @@ export default class TodoController {
     const id: number = Number(req.params.id);
     res.send(this.service.deleteById(id));
   };
+
+  public createTodo = (req: Request, res: Response): void => {
+    const name: string = req.params.todoName;
+    res.send(this.service.createTodo(name));
+  };
 }
