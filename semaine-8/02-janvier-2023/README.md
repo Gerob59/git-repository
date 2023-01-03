@@ -2,6 +2,10 @@
 
 permet de vérifier l'api en communiquant avec le controller
 
+- créer un environnmement avec des variables (ex : URLtodo - http://localhost:3000/todo)
+- créer une collection en utilisant l'environnement créé juste avant
+- créer des requetes pour vérifier automatiquement et simplement (body -> raw -> json)
+
 # Config
 
 nmp init :
@@ -22,13 +26,18 @@ Dependances à installer :
 - npm i @types/express
 - npm i @types/node
 - npm i dotenv
-- npm i ts-node-dev
+- npm i ts-node-dev (equivalent à un live serveur) => tester les modifs
 - npm i
 
-## script :
+# script :
 
 - "start": "tsc && node ./dist/app.js",
 - "build": "tsc",
 - "start:dev": "ts-node-dev ./src/app.ts"
 
-run commande : npm run <cmd>
+exec = npm run <cmd>
+
+# env
+
+le fichier env ne va pas sur github.
+Un fichier env.example existe pour recreer chez soit le fichier env.
