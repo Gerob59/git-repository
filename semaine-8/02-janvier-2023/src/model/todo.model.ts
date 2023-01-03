@@ -1,3 +1,6 @@
+/**
+ * c'est un DTO (data transfer object) qui permet de transformer la donnée
+ */
 export default class TodoModel {
   private _id: number;
   private _task: string;

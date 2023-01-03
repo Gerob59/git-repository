@@ -6,6 +6,18 @@ permet de vérifier l'api en communiquant avec le controller
 - créer une collection en utilisant l'environnement créé juste avant
 - créer des requetes pour vérifier automatiquement et simplement (body -> raw -> json)
 
+# methode http
+
+**Get** : recupérer un objet
+
+**Post** : formulaire
+
+**Put** : modifier l'objet ou le creer s'il existe pas
+
+**Patch** : modifier une partie de l'objet
+
+**Delete** : supprimer
+
 # Config
 
 nmp init :
