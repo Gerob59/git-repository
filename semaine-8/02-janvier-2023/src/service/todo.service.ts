@@ -24,9 +24,9 @@ export default class TodoService {
   }
 
   public deleteById(id: number): void {
-    let indexTodo: number = -1;
-    indexTodo = this.repo.getAll().findIndex((todo) => todo.id === id);
-    if (indexTodo === -1) throw "Todo not found";
-    else this.repo.delete(indexTodo);
+    const indexTodo: number = this.repo
+      .getAll()
+      .findIndex((todo) => todo.id === id);
+    if (indexTodo !== -1) this.repo.delete(indexTodo);
   }
 }

@@ -1,6 +1,6 @@
 # Postman
 
-permet de vérifier l'api en communiquant avec le controller
+permet de vérifier l'api en communiquant avec le controller (test logique)
 
 - créer un environnmement avec des variables (ex : URLtodo - http://localhost:3000/todo)
 - créer une collection en utilisant l'environnement créé juste avant
