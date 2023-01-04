@@ -33,9 +33,9 @@ export default class TodoController {
     res.send(todo);
   };
 
-  public put = (req: Request, res: Response): void => {
+  public updateTodo = (req: Request, res: Response): void => {
     const id: number = Number(req.params.id);
     const todo: TodoModel = req.body;
-    res.send(this.service.put(id, todo));
+    res.send(this.service.updateTodo(id, todo));
   };
 }

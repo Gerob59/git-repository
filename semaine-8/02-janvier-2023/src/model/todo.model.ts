@@ -7,10 +7,10 @@ export default class TodoModel {
   completed: boolean;
   private static count: number = 0;
 
-  constructor(task: string) {
+  constructor(task: string, completed?: boolean) {
     this.id = ++TodoModel.count;
     this.task = task;
-    this.completed = false;
+    this.completed = completed || false;
   }
 
   public finished() {

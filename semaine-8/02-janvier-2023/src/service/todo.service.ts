@@ -25,19 +25,19 @@ export default class TodoService {
     this.repo.deleteById(id);
   }
 
-  public createTodo = (task: string): TodoModel => {
+  public createTodo = (task: string, completed?: boolean): TodoModel => {
     if (!task) throw "Task not found";
     else {
-      const todo: TodoModel = new TodoModel(task);
+      const todo: TodoModel = new TodoModel(task, completed);
       this.repo.createTodo(todo);
       return todo;
     }
   };
 
-  public put = (id: number, todo: TodoModel): TodoModel => {
+  public updateTodo = (id: number, todo: TodoModel): TodoModel => {
     let todoAModifier: TodoModel | undefined = this.findTodo(id);
     if (!todoAModifier) {
-      todoAModifier = this.createTodo(todo.task);
+      todoAModifier = this.createTodo(todo.task, todo.completed);
     } else {
       const indexTodo: number = this.findTodoIndex(id);
       todoAModifier.task = todo.task;
