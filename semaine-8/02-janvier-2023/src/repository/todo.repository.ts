@@ -22,4 +22,8 @@ export default class TodoRepository {
   public createTodo = (todo: TodoModel): void => {
     this._todos.push(todo);
   };
+
+  public updateTodo = (index: number, todo: TodoModel): void => {
+    this._todos[index] = todo;
+  };
 }
