@@ -1,7 +1,7 @@
 import express from "express";
 import TodoRouter from "./router/todo.router";
 
-// utilisation d'uen variable d'environnement
+// utilisation d'une variable d'environnement
 import "dotenv/config";
 const port = process.env.PORT;
 
@@ -11,7 +11,7 @@ const app = express();
 // lire un formulaire
 // app.use(express.encodeddata());
 
-// permet de lir le json
+// permet de lire le json
 app.use(express.json());
 
 // instance du router de express ayant pour route par defaut todo

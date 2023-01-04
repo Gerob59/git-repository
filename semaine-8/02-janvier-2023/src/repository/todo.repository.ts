@@ -5,6 +5,10 @@ import TodoModel from "../model/todo.model";
  * accessible avec des requetes sql
  */
 export default class TodoRepository {
+  /**
+   * Données en brut.
+   * Normalement on accede a la base de donnée avec des requêtes sql
+   */
   private _todos: TodoModel[] = [
     new TodoModel("Decuver"),
     new TodoModel("Se reveiller"),
@@ -19,11 +23,11 @@ export default class TodoRepository {
     this._todos = this._todos.filter((todo) => todo.id !== id);
   };
 
-  public createTodo = (todo: TodoModel): void => {
+  public create = (todo: TodoModel): void => {
     this._todos.push(todo);
   };
 
-  public updateTodo = (index: number, todo: TodoModel): void => {
+  public update = (index: number, todo: TodoModel): void => {
     this._todos[index] = todo;
   };
 }

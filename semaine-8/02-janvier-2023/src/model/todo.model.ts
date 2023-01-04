@@ -2,18 +2,18 @@
  * c'est un DTO (data transfer object) qui permet de transformer la donnée
  */
 export default class TodoModel {
-  id: number;
-  task: string;
-  completed: boolean;
+  private _id: number;
+  public task: string;
+  public completed: boolean;
   private static count: number = 0;
 
   constructor(task: string, completed?: boolean) {
-    this.id = ++TodoModel.count;
+    this._id = ++TodoModel.count;
     this.task = task;
     this.completed = completed || false;
   }
 
-  public finished() {
-    this.completed = !this.completed;
+  get id(): number {
+    return this._id;
   }
 }

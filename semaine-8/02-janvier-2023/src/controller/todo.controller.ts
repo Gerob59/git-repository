@@ -7,8 +7,12 @@ import TodoService from "../service/todo.service";
  * 2. permet de récupérer la donnée de l'api pour l'envoyer a l'extérieur
  */
 export default class TodoController {
-  service: TodoService;
+  private service: TodoService;
 
+  /**
+   * Aggregation.
+   * si le controller meurt, le service existe toujours
+   */
   constructor(service: TodoService) {
     this.service = service;
   }
@@ -29,14 +33,14 @@ export default class TodoController {
 
   public create = (req: Request, res: Response): void => {
     const task: string = req.body.task;
-    const todo: TodoModel = this.service.createTodo(task);
+    const todo: TodoModel = this.service.create(task);
     res.send(todo);
   };
 
-  public updateTodo = (req: Request, res: Response): void => {
+  public update = (req: Request, res: Response): void => {
     const id: number = +req.params.id;
     const todo: TodoModel = req.body;
-    const data = this.service.updateTodo(id, todo);
+    const data = this.service.update(id, todo);
     res.send(data);
   };
 }

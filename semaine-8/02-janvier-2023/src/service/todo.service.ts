@@ -5,8 +5,12 @@ import TodoRepository from "../repository/todo.repository";
  * Sert à faire la logique métier
  */
 export default class TodoService {
-  repo: TodoRepository;
+  private repo: TodoRepository;
 
+  /**
+   * Aggregation.
+   * si le service meurt, le repo existe toujours
+   */
   constructor(repo: TodoRepository) {
     this.repo = repo;
   }
@@ -25,24 +29,24 @@ export default class TodoService {
     this.repo.deleteById(id);
   }
 
-  public createTodo = (task: string, completed?: boolean): TodoModel => {
+  public create = (task: string, completed?: boolean): TodoModel => {
     if (!task) throw "Task not found";
     else {
       const todo: TodoModel = new TodoModel(task, completed);
-      this.repo.createTodo(todo);
+      this.repo.create(todo);
       return todo;
     }
   };
 
-  public updateTodo = (id: number, todo: TodoModel): TodoModel => {
+  public update = (id: number, todo: TodoModel): TodoModel => {
     if (todo.id != id) throw "Todo incorrecte";
     let todoAModifier: TodoModel | undefined = this.findTodo(id);
     if (!todoAModifier) {
-      todoAModifier = this.createTodo(todo.task, todo.completed);
+      todoAModifier = this.create(todo.task, todo.completed);
     } else {
       const indexTodo: number = this.findTodoIndex(id);
       todoAModifier = new TodoModel(todo.task, todo.completed);
-      this.repo.updateTodo(indexTodo, todoAModifier);
+      this.repo.update(indexTodo, todoAModifier);
     }
     return todoAModifier;
   };
