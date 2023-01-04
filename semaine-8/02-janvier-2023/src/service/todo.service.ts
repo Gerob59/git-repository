@@ -35,13 +35,13 @@ export default class TodoService {
   };
 
   public updateTodo = (id: number, todo: TodoModel): TodoModel => {
+    if (todo.id != id) throw "Todo incorrecte";
     let todoAModifier: TodoModel | undefined = this.findTodo(id);
     if (!todoAModifier) {
       todoAModifier = this.createTodo(todo.task, todo.completed);
     } else {
       const indexTodo: number = this.findTodoIndex(id);
-      todoAModifier.task = todo.task;
-      todoAModifier.completed = todo.completed;
+      todoAModifier = new TodoModel(todo.task, todo.completed);
       this.repo.updateTodo(indexTodo, todoAModifier);
     }
     return todoAModifier;
