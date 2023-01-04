@@ -44,9 +44,7 @@ export default class TodoService {
     if (!todoAModifier) {
       todoAModifier = this.create(todo.task, todo.completed);
     } else {
-      const indexTodo: number = this.findTodoIndex(id);
-      todoAModifier = new TodoModel(todo.task, todo.completed);
-      this.repo.update(indexTodo, todoAModifier);
+      todoAModifier = this.update(id, todo);
     }
     return todoAModifier;
   };
