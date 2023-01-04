@@ -1,0 +1,19 @@
+{
+  "todo": [
+    {
+        "_id": 1,
+        "task": "Decuver",
+        "completed": false
+    },
+    {
+        "_id": 2,
+        "task": "Se reveiller",
+        "completed": false
+    },
+    {
+        "_id": 3,
+        "task": "Aller bosser",
+        "completed": false
+    }
+  ]
+}

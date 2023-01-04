@@ -47,6 +47,11 @@ Dependances à installer :
 - npm i ts-node-dev (equivalent à un live serveur) => tester les modifs
 - npm i
 
+pour installer et lancer JSONserver :
+
+- npm i json-server
+- json-server --watch db.json
+
 # script :
 
 - "start": "tsc && node ./dist/app.js",
