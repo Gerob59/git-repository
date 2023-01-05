@@ -8,4 +8,4 @@
 .env
 
 # base de donnée
-db.json
+/db.json
