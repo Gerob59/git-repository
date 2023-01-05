@@ -49,7 +49,7 @@ Dependances à installer :
 
 pour installer et lancer JSONserver :
 
-- npm i json-server
+- npm i -g json-server
 - json-server --watch db.json
 
 # script :
@@ -86,3 +86,7 @@ scripts :
 - "test": "jest",
   -"test:watch": "jest --watch",
 - "test:cov": "jest --coverage"
+
+# axios
+
+npm i axios
