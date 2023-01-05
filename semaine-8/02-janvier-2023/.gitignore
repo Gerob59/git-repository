@@ -6,3 +6,6 @@
 
 # misc
 .env
+
+# base de donnée
+db.json
