@@ -7,10 +7,10 @@ const repository: TodoRepository = new TodoRepository();
 const service: TodoService = new TodoService(repository);
 const controller: TodoController = new TodoController(service);
 
-const resulat: TodoModel[] = service.getAll();
+const todo: TodoModel = service.getAll()[0];
 
-describe("service.getall()", () => {
-  it("should return 3 json object", () => {
-    expect(service.getAll()).toBe(resulat);
+describe("service.getAll()[0]", () => {
+  it("should return todo with id 1", () => {
+    expect(service.getById(1)).toBe(todo);
   });
 });
