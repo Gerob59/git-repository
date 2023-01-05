@@ -3,7 +3,7 @@ import "dotenv/config";
 import TodoModelPersistant from "../model/todo.model.persistant";
 
 export default class TodoRepositoryPersistant {
-  private URL: string | undefined = process.env.JSONSERVER;
+  private URL: string = process.env.JSONSERVER as string;
 
   getAll = async (): Promise<TodoModelPersistant[]> => {
     return axios.get(`${this.URL}`).then((res) => res.data);
@@ -13,7 +13,7 @@ export default class TodoRepositoryPersistant {
     return axios
       .get(`${this.URL}/${id}`)
       .then((res) => res.data)
-      .catch((err) => "id not found");
+      .catch(() => "id not found");
   };
 
   create = async (todo: TodoModelPersistant): Promise<TodoModelPersistant> => {
@@ -24,7 +24,7 @@ export default class TodoRepositoryPersistant {
     return axios.put(`${this.URL}/${todo.id}`, todo).then((res) => res.data);
   };
 
-  delete = (id: number): Promise<any> => {
+  deleteById = (id: number): Promise<any> => {
     return axios.delete(`${this.URL}/${id}`);
   };
 

@@ -10,8 +10,8 @@ const controller = new TodoControllerPersistant(service);
 const router = Express.Router();
 router.get("/", controller.getAll);
 router.get("/:id", controller.getById);
-router.delete("/:id", controller.delete);
-// router.post("/", controller.create);
+router.delete("/:id", controller.deleteById);
+router.post("/", controller.create);
 // router.put("/:id", controller.createOrUpdate);
 // router.patch("/:id", controller.update);
 

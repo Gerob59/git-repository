@@ -16,7 +16,15 @@ export default class TodoServicePersistant {
     return this.repository.getById(id);
   };
 
-  delete = (id: number): Promise<any> => {
-    return this.repository.delete(id);
+  deleteById = (id: number): Promise<any> => {
+    return this.repository.deleteById(id);
+  };
+
+  create = (
+    task: string,
+    completed?: boolean
+  ): Promise<TodoModelPersistant> => {
+    const data: TodoModelPersistant = new TodoModelPersistant(task, completed);
+    return this.repository.create(data);
   };
 }
