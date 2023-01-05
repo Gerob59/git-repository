@@ -64,3 +64,25 @@ exec = npm run <cmd>
 
 le fichier env ne va pas sur github.
 Un fichier env.example existe pour recreer chez soit le fichier env.
+
+# .gitignore
+
+/node_modules
+/dist <!-- le build de l'application, on ne l'envoie pas, car on peut l'avoir en transpilant le code. -->
+.env <!-- proteger les données sensibles. -->
+
+# installer jest
+
+dependancies :
+
+- npm i @types/jest
+- npm i jest
+- npm i ts-jest
+- npm i typescript
+- npm i ts-node
+
+scripts :
+
+- "test": "jest",
+  -"test:watch": "jest --watch",
+- "test:cov": "jest --coverage"
