@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import TodoModelPersistant from "../model/todo.model.persistant";
 import TodoServicePersistant from "../service/todo.service.persistant";
 
 /**
@@ -66,17 +67,24 @@ export default class TodoControllerPersistant {
     res.send(todo);
   };
 
-  //   /**
-  //    * Methode PUT de HTTP pour modifier les données d'un objet dans la base de donnée grâce à un JSON dans son body, ou la créer si elle n'existe pas.
-  //    * @param req La requete HTTP avec des informations pour le serveur.
-  //    * @param res La reponse du serveur pour la requete HTTP.
-  //    */
-  //   public createOrUpdate = (req: Request, res: Response): void => {
-  //     const id: number = +req.params.id;
-  //     const todo: TodoModel = req.body;
-  //     const data = this.service.createOrUpdate(id, todo);
-  //     res.send(data);
-  //   };
+  /**
+   * Methode PUT de HTTP pour modifier les données d'un objet dans la base de donnée grâce à un JSON dans son body, ou la créer si elle n'existe pas.
+   * @param req La requete HTTP avec des informations pour le serveur.
+   * @param res La reponse du serveur pour la requete HTTP.
+   */
+  public createOrUpdate = async (
+    req: Request,
+    res: Response
+  ): Promise<void> => {
+    const id: number = +req.params.id;
+    const todo: TodoModelPersistant = req.body;
+    try {
+      const data = await this.service.update(id, todo);
+      res.send(data);
+    } catch (err) {
+      res.send(err);
+    }
+  };
 
   //   /**
   //    * Methode PATCH de HTTP pour modifier les données d'un objet dans la base de donnée grâce à un JSON dans son body.

@@ -27,4 +27,12 @@ export default class TodoServicePersistant {
     const data: TodoModelPersistant = new TodoModelPersistant(task, completed);
     return this.repository.create(data);
   };
+
+  update = (
+    id: number,
+    todo: TodoModelPersistant
+  ): Promise<TodoModelPersistant> => {
+    if (todo.id !== id) throw "object corrompted";
+    return this.repository.update(todo).catch((err) => err);
+  };
 }
