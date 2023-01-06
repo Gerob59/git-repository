@@ -9,14 +9,22 @@ export default class TodoModelPersistant {
     const [obj]: any[] = data;
 
     if (typeof obj === "string") {
-      this.task = obj;
-      this.completed = false;
+      this.create(obj);
     } else {
-      for (let key in obj) {
-        if (checkAttribute.includes(key)) {
-          this[key] = obj[key];
-        }
-      }
+      this.update(obj);
     }
   }
+
+  create = (obj: string) => {
+    this.task = obj;
+    this.completed = false;
+  };
+
+  update = (obj: any[]) => {
+    for (let key in obj) {
+      if (checkAttribute.includes(key)) {
+        this[key] = obj[key];
+      }
+    }
+  };
 }
