@@ -72,10 +72,7 @@ export default class TodoControllerPersistant {
    * @param req La requete HTTP avec des informations pour le serveur.
    * @param res La reponse du serveur pour la requete HTTP.
    */
-  public createOrUpdate = async (
-    req: Request,
-    res: Response
-  ): Promise<void> => {
+  public update = async (req: Request, res: Response): Promise<void> => {
     const id: number = +req.params.id;
     const todo: TodoModelPersistant = req.body;
     try {
@@ -86,15 +83,15 @@ export default class TodoControllerPersistant {
     }
   };
 
-  //   /**
-  //    * Methode PATCH de HTTP pour modifier les données d'un objet dans la base de donnée grâce à un JSON dans son body.
-  //    * @param req La requete HTTP avec des informations pour le serveur.
-  //    * @param res La reponse du serveur pour la requete HTTP.
-  //    */
-  //   public update = (req: Request, res: Response): void => {
-  //     const id: number = +req.params.id;
-  //     const todo: TodoModel = req.body;
-  //     const data = this.service.update(id, todo);
-  //     res.send(data);
-  //   };
+  /**
+   * Methode PATCH de HTTP pour modifier les données d'un objet dans la base de donnée grâce à un JSON dans son body.
+   * @param req La requete HTTP avec des informations pour le serveur.
+   * @param res La reponse du serveur pour la requete HTTP.
+   */
+  public patch = async (req: Request, res: Response): Promise<void> => {
+    const id: number = +req.params.id;
+    const todo: TodoModelPersistant = req.body;
+    const data = await this.service.patch(id, todo);
+    res.send(data);
+  };
 }

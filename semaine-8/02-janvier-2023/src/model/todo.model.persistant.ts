@@ -1,26 +1,19 @@
-const checkAttribute: string[] = ["task", "completed"];
-
 export default class TodoModelPersistant {
   id!: number;
   [task: string]: any;
-  completed?: boolean;
+  completed!: boolean;
 
-  constructor(...data: any[]) {
-    const [obj]: any[] = data;
-
-    if (typeof obj === "string") {
-      this.create(obj);
-    } else {
-      this.update(obj);
-    }
+  constructor(task?: string, completed?: boolean) {
+    if (task) this.create(task, completed);
   }
 
-  create = (obj: string) => {
-    this.task = obj;
-    this.completed = false;
+  create = (task: string, completed: boolean = false) => {
+    this.task = task;
+    this.completed = completed;
   };
 
-  update = (obj: any[]) => {
+  update = (obj: any) => {
+    const checkAttribute: string[] = ["id", "task", "completed"];
     for (let key in obj) {
       if (checkAttribute.includes(key)) {
         this[key] = obj[key];

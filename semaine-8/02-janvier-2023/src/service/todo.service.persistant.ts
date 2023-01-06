@@ -28,11 +28,29 @@ export default class TodoServicePersistant {
     return this.repository.create(data);
   };
 
-  update = (
+  update = async (
     id: number,
     todo: TodoModelPersistant
   ): Promise<TodoModelPersistant> => {
     if (todo.id !== id) throw "object corrompted";
-    return this.repository.update(todo).catch((err) => err);
+    const checkId: TodoModelPersistant = await this.getById(id);
+    const data: TodoModelPersistant = new TodoModelPersistant();
+
+    if (typeof checkId === "string") {
+      data.create(todo.task, todo.completed);
+      return this.repository.create(data);
+    } else {
+      data.update(todo);
+      return this.repository.update(data).catch((err) => err);
+    }
+  };
+
+  patch = (
+    id: number,
+    todo: TodoModelPersistant
+  ): Promise<TodoModelPersistant> => {
+    const data: TodoModelPersistant = new TodoModelPersistant();
+    data.update(todo);
+    return this.repository.patch(id, data).catch((err) => err);
   };
 }
